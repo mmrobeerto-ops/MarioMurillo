@@ -192,6 +192,18 @@
   .est{font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--red);white-space:nowrap}
   .est.todo{color:var(--muted)}
   .wkrow.on td{background:var(--red-soft)}
+  .syn{display:grid;gap:9px;margin-top:8px}
+  .sy{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .sypair{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}
+  @media(max-width:470px){.sypair{grid-template-columns:1fr}}
+  .syhalf{padding:11px 13px;font-size:12.5px;font-weight:600;background:var(--panel)}
+  .syhalf .sylab{display:block;font-size:9px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;margin-bottom:3px}
+  .syhalf.of{color:var(--fg)}
+  .syhalf.of .sylab{color:var(--red)}
+  .syhalf.df{color:#cccdd4;background:var(--panel-2)}
+  .syhalf.df .sylab{color:var(--muted)}
+  .synote{padding:9px 13px;font-size:11.5px;color:var(--muted);line-height:1.5;border-top:1px solid var(--line)}
+  .synote b{color:#cccdd4}
   .statesrow{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0 0}
   .stt{font-size:10.5px;font-weight:600;border-radius:999px;padding:4px 9px;border:1px solid var(--line);color:var(--muted);display:inline-flex;gap:6px;align-items:center}
   .stt::before{content:"";width:7px;height:7px;border-radius:50%}
@@ -627,6 +639,17 @@
     <div class="mini-h" style="margin-top:24px">El microciclo · semana tipo (cuadrícula)</div>
     <p class="muted" style="font-size:12.5px;margin:-6px 0 2px">La semana con un partido (domingo). Toca cualquier celda para ver su ficha de tarea.</p>
     <div id="micro-grid"></div>
+
+    <div class="mini-h" style="margin-top:24px">Sinergia ofensivo–defensiva</div>
+    <p class="muted" style="font-size:12.8px;line-height:1.6;margin:-6px 0 4px">No entreno lo ofensivo y lo defensivo por separado. En la <b style="color:#cccdd4">misma tarea</b>, mientras un equipo trabaja un fundamento ofensivo, el otro entrena su complemento defensivo — <b style="color:#cccdd4">la situación que crea uno es la que entrena al otro</b>. Así cada ejercicio rinde doble y el equipo entiende las dos caras de la misma jugada.</p>
+    <div class="syn">
+      <div class="sy"><div class="sypair"><div class="syhalf of"><span class="sylab">Ofensivo</span>Superar la 1ª línea con superioridad, buscando al hombre libre</div><div class="syhalf df"><span class="sylab">Defensivo</span>Acosar al posesor sin ser superado · presión orientada</div></div><div class="synote">Al atraer y romper la primera presión, el rival entrena a <b>presionar orientando</b> y a temporizar cuando no tiene seguridad.</div></div>
+      <div class="sy"><div class="sypair"><div class="syhalf of"><span class="sylab">Ofensivo</span>Jugar con el tercer hombre y apoyos tras el pase</div><div class="syhalf df"><span class="sylab">Defensivo</span>Coberturas, achique y vigilancias</div></div><div class="synote">Buscar al tercer hombre obliga al rival a <b>coordinar coberturas</b> y a cerrar el apoyo libre.</div></div>
+      <div class="sy"><div class="sypair"><div class="syhalf of"><span class="sylab">Ofensivo</span>Atacar los intervalos con pases interiores</div><div class="syhalf df"><span class="sylab">Defensivo</span>Cerrar los pasillos interiores (FGL)</div></div><div class="synote">Si atacamos los intervalos, el rival entrena a <b>cerrarlos</b> y a orientar el balón al exterior.</div></div>
+      <div class="sy"><div class="sypair"><div class="syhalf of"><span class="sylab">Ofensivo</span>Finalizar en zona de finalización (carril central)</div><div class="syhalf df"><span class="sylab">Defensivo</span>Defender atrás cuando llega al pivote · vigilancias</div></div><div class="synote">La misma jugada de finalización entrena a la defensa a <b>replegar y vigilar</b> ante una posible transición.</div></div>
+      <div class="sy"><div class="sypair"><div class="syhalf of"><span class="sylab">Ofensivo</span>Dar amplitud y profundidad para abrir al rival</div><div class="syhalf df"><span class="sylab">Defensivo</span>Basculación y equilibrio de línea</div></div><div class="synote">Al abrir el campo, el rival entrena a <b>bascular junto</b> y a mantener el equilibrio defensivo.</div></div>
+      <div class="sy"><div class="sypair"><div class="syhalf of"><span class="sylab">Ofensivo</span>Salida y construcción desde atrás</div><div class="syhalf df"><span class="sylab">Defensivo</span>Presión alta orientando a bandas</div></div><div class="synote">Nuestra salida entrena, en el rival, la <b>presión alta</b> que lleva el juego a zonas favorables.</div></div>
+    </div>
   </section>
 
   <!-- FUNDAMENTOS SELECCIONADOS -->
