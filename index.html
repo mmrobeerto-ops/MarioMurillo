@@ -310,6 +310,84 @@
   .sesbrief .sbtime{color:var(--red);font-weight:700;font-size:11px;white-space:nowrap}
   .toolbtn{display:inline-flex;align-items:center;gap:8px;margin-top:14px;background:var(--red);color:#1a1205;text-decoration:none;border-radius:11px;padding:13px 18px;font-family:var(--font-head);font-weight:600;font-size:14px;border:1px solid var(--red)}
   .toolbtn.ghost{background:transparent;color:var(--fg);border-color:var(--line)}
+
+  /* ===== Pestañas por bloque ===== */
+  .tabbar{position:sticky;top:0;z-index:30;margin:22px calc(50% - 50vw) 0;padding:10px max(18px,calc(50vw - 360px));background:rgba(14,15,18,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line);display:none}
+  .js-tabs .tabbar{display:block}
+  .tabbar .tb{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .tabbar .tb::-webkit-scrollbar{display:none}
+  .tabbar button{flex:none;font:600 13px var(--font-body);color:var(--muted);background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:9px 15px;cursor:pointer;white-space:nowrap}
+  .tabbar button.on{background:var(--red);border-color:var(--red);color:#1a1205}
+  .tabbar button:not(.on):hover{color:var(--fg);border-color:var(--red-deep)}
+  .js-tabs section[data-g].hid{display:none}
+  .gnav{display:none}
+  .js-tabs .gnav{display:flex;justify-content:space-between;gap:10px;padding:26px 0 6px}
+  .gnav button{font:600 13.5px var(--font-body);border-radius:12px;padding:13px 18px;cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--fg)}
+  .gnav button.nx{margin-left:auto;background:var(--red);border-color:var(--red);color:#1a1205}
+  .gnav button[hidden]{display:none}
+  .js-tabs .toc{display:none}
+
+  /* ===== Las 4 fases (vista amplia) ===== */
+  @media(min-width:900px){ #fases.fx-on{position:relative;left:50%;transform:translateX(-50%);width:min(1060px,calc(100vw - 48px))} }
+  #fases.fx-on details.phase{display:none}
+  .fx-ph{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}
+  @media(max-width:760px){.fx-ph{grid-template-columns:1fr 1fr}}
+  .fx-ph button{text-align:left;cursor:pointer;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:15px 15px 14px;color:var(--fg);display:flex;flex-direction:column;gap:7px;transition:border-color .15s,transform .15s}
+  .fx-ph button:hover{transform:translateY(-1px);border-color:var(--red-deep)}
+  .fx-ph button .i{width:34px;height:34px;border-radius:10px;background:var(--red-soft);color:var(--red);display:grid;place-items:center;font:700 16px var(--font-head)}
+  .fx-ph button b{font:700 15px/1.2 var(--font-head)}
+  .fx-ph button small{font-size:11.5px;line-height:1.4;color:var(--muted)}
+  .fx-ph button.on{border-color:var(--red);background:linear-gradient(180deg,var(--red-soft),var(--panel))}
+  .fx-ph button.on .i{background:var(--red);color:#1a1205}
+  @media(max-width:560px){
+    .fx-ph{gap:8px}
+    .fx-ph button{flex-direction:row;align-items:center;gap:10px;padding:11px 12px;border-radius:12px}
+    .fx-ph button .i{width:28px;height:28px;font-size:13px;flex:none}
+    .fx-ph button b{font-size:13px}
+    .fx-ph button small{display:none}
+    .fx-panel{padding:16px}
+    .fx-pitch .mp-svg{max-width:190px}
+    .fx-nav button{font-size:12px;padding:10px 12px}
+  }
+  .fx-panel{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px}
+  .fx-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+  .fx-head h3{font:700 clamp(19px,3vw,24px) var(--font-head)}
+  .fx-head p{font-size:13px;color:var(--muted);margin-top:3px}
+  .fx-mo{display:flex;flex-wrap:wrap;gap:7px}
+  .fx-mo button{font:600 12.5px var(--font-body);cursor:pointer;color:var(--muted);background:var(--panel-2);border:1px solid var(--line);border-radius:999px;padding:8px 14px}
+  .fx-mo button.on{color:#1a1205;background:var(--red);border-color:var(--red)}
+  .fx-body{display:grid;grid-template-columns:300px 1fr;gap:22px;align-items:start}
+  @media(max-width:760px){.fx-body{grid-template-columns:1fr}}
+  .fx-pitch{background:var(--panel-2);border:1px solid var(--line);border-radius:14px;padding:14px;text-align:center}
+  .fx-pitch .mp-svg{width:100%;max-width:250px;height:auto;margin:0 auto;display:block}
+  .fx-pitch .lab{margin-top:10px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  .fx-pitch .lab b{display:block;color:var(--red);font:700 16px var(--font-head);letter-spacing:0;text-transform:none;margin-top:3px}
+  .fx-pr{background:var(--red-soft);border:1px solid var(--red-deep);border-radius:14px;padding:15px 17px;font-size:15px;line-height:1.5}
+  .fx-pr .k{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:5px}
+  .fx-zones{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+  @media(max-width:560px){.fx-zones{grid-template-columns:1fr}}
+  .fx-z{background:var(--panel-2);border:1px solid var(--line);border-radius:12px;padding:12px 13px}
+  .fx-z .k{display:flex;align-items:center;gap:7px;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .fx-z .k i{width:9px;height:9px;border-radius:50%;background:var(--red);opacity:var(--o,1)}
+  .fx-z p{margin-top:6px;font-size:13px;line-height:1.5;color:#dfe0e6}
+  .fx-sub{margin-top:16px;font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .fx-fund{display:grid;gap:8px;margin-top:8px}
+  .fx-f{display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.45;color:#dfe0e6;background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+  .fx-f b{flex:none;color:var(--red);font-weight:700;min-width:88px}
+  .fx-tr{margin-top:14px;display:inline-flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:13px;color:#e8e2d6;background:var(--panel-2);border:1px dashed var(--red-deep);border-radius:10px;padding:9px 13px}
+  .fx-tr b{color:var(--red)}
+  .fx-nav{display:flex;justify-content:space-between;gap:10px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+  .fx-nav button{font:600 13px var(--font-body);cursor:pointer;border-radius:11px;padding:11px 16px;border:1px solid var(--line);background:var(--panel-2);color:var(--fg)}
+  .fx-nav button.nx{margin-left:auto;background:var(--red);border-color:var(--red);color:#1a1205}
+  .fx-nav button:disabled{opacity:.35;cursor:default}
+  @keyframes fxin{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .fx-anim{animation:fxin .25s ease}
+  @media print{
+    .tabbar,.gnav,.fx-ph,.fx-panel{display:none!important}
+    section[data-g].hid{display:block!important}
+    #fases.fx-on details.phase{display:block!important}
+    #fases.fx-on{left:auto;transform:none;width:auto}
+  }
   /* --- Añadidos: navegación, resumen, impresión --- */
   html{scroll-behavior:smooth}
   section[id],header[id],figure[id]{scroll-margin-top:16px}
@@ -381,8 +459,11 @@
       <a href="#idea"><span>01</span>Idea de juego</a><a href="#estructuras"><span>02</span>Estructuras</a><a href="#jugadores"><span>03</span>Jugadores</a><a href="#valores"><span>04</span>Valores</a><a href="#fases"><span>05</span>4 fases</a><a href="#abp"><span>06</span>Balón parado</a><a href="#temporada"><span>07</span>Temporada</a><a href="#fundamentos"><span>08</span>Fundamentos</a><a href="#sesion"><span>09</span>Sesión</a><a href="#staff"><span>10</span>Staff</a><a href="#proyecto"><span>11</span>Club / academia</a><a href="#contacto"><span>12</span>Contacto</a>
     </nav>
   </header>
+  <div class="tabbar" id="tabbar" role="tablist" aria-label="Bloques del portafolio"><div class="tb">
+    <button data-g="perfil">Perfil</button><button data-g="modelo">Modelo de juego</button><button data-g="metodo">Metodología</button><button data-g="staff">Staff</button><button data-g="club">Club / academia</button>
+  </div></div>
 
-  <section id="credenciales">
+  <section id="credenciales" data-g="perfil">
     <div class="mini-h" style="margin-top:2px">Credenciales verificables</div>
     <div class="docgrid">
       <figure class="doc" id="doc-licencia">
@@ -411,7 +492,7 @@
   </section>
 
   <!-- SOBRE MÍ -->
-  <section>
+  <section id="sobre" data-g="perfil">
     <div class="mini-h">Sobre mí</div>
     <p class="bio">Entrenador profesional mexicano con <b>Licencia PRO (FMF)</b>. Me formé en <b>alto rendimiento, fútbol formativo y video análisis</b>, y mi trabajo se centra en el desarrollo del jugador joven: un modelo de juego claro, enseñado de lo general a lo específico, con el <b>porqué</b> detrás de cada fundamento. Metódico y detallista — construyo la temporada, el microciclo y cada sesión con intención.</p>
     <div class="obj"><b>Busco</b> · dirigir inferiores / fútbol formativo en un club de segunda división · abierto a crear o formar un <a href="#proyecto" style="color:inherit">club o academia</a>.</div>
@@ -422,7 +503,7 @@
   </section>
 
   <!-- TRAYECTORIA -->
-  <section>
+  <section id="trayectoria" data-g="perfil">
     <div class="mini-h">Trayectoria</div>
     <div class="traj">
       <div class="tj"><div class="tjh"><span class="tjt">Fútbol Base · Liga BBVA MX «Mi Comunidad»</span><span class="tjp">Tijuana · 2023</span></div><div class="tjcat">Categorías infantiles · 6-12 años</div><div class="tjc">Entrenador en el programa de fútbol base de la <b>FMF / Liga MX</b>. Formé dos equipos: <b style="color:var(--red)">campeón y subcampeón</b> de su torneo. <i>Respaldado por carta de recomendación oficial de la FMF — Liga MX.</i></div></div>
@@ -430,12 +511,12 @@
     </div>
   </section>
 
-  <section id="idea">
+  <section id="idea" data-g="modelo">
     <div class="shead"><span class="num">01</span><h2>Idea de juego</h2></div>
     <p class="idea-txt">Buscamos un <b>juego asociativo</b>: dominar el partido con la posesión del balón, generando constantemente <b>superioridades numéricas y posicionales</b>. Rompemos líneas de presión, encontramos al hombre libre y progresamos con el balón al campo rival para <b>crear y finalizar</b> situaciones de gol. En defensa, una presión media que permite jugar, orienta al rival a zonas favorables y entonces presiona fuerte; en la pérdida, <b>presión inmediata</b> para cortar la progresión y recuperar cerca de la portería contraria.</p>
   </section>
 
-  <section id="estructuras">
+  <section id="estructuras" data-g="modelo">
     <div class="shead"><span class="num">02</span><h2>Estilo y estructuras</h2></div>
     <div class="forms">
       <div class="form"><div class="f">P-3-4-3</div><div class="l">Estructura principal · construcción desde tres, amplitud por fuera y tres puntas de ataque</div></div>
@@ -481,7 +562,7 @@
     </script>
   </section>
 
-  <section id="jugadores">
+  <section id="jugadores" data-g="modelo">
     <div class="shead"><span class="num">03</span><h2>Perfil de jugadores que busco</h2></div>
     <p class="sintro">Cada rol con su estructura dominante, su estilo, y las <b>habilidades que debe dominar</b> — perceptivas, cognitivas, con balón y sin balón. Toca "Habilidades a dominar" en cada uno.</p>
 
@@ -577,7 +658,7 @@
     <p class="muted" style="margin-top:16px;font-size:12.5px">Once tipo en P-3-4-3: portero-líbero · tres centrales (duelo, salida, creativo) · dos carrileros · contención y box to box · extremo, delantero y extremo — con el enganche como alternativa entre líneas. Banca con intención: portero ofensivo · central candado · lateral ofensivo · medio centro defensivo · extremo veloz · delantero rematador.</p>
   </section>
 
-  <section id="valores">
+  <section id="valores" data-g="perfil">
     <div class="shead"><span class="num">04</span><h2>Valores</h2></div>
     <div class="vals">
       <div><h3>Como entrenador</h3><ul><li>Responsabilidad</li><li>Lealtad</li><li>Humildad</li><li>Perseverancia</li></ul></div>
@@ -586,7 +667,7 @@
   </section>
 
   <!-- EL JUEGO EN 4 FASES -->
-  <section id="fases">
+  <section id="fases" data-g="modelo">
     <div class="shead"><span class="num">05</span><h2>El juego en 4 fases</h2></div>
     <p class="phz-intro">El fútbol son cuatro fases. Así las resuelvo yo — con sus principios, sub-principios por zona, los fundamentos que elijo y la estrategia didáctica y el día en que se entrenan.</p>
 
@@ -671,7 +752,7 @@
   </section>
 
   <!-- BALÓN PARADO -->
-  <section id="abp">
+  <section id="abp" data-g="modelo">
     <div class="shead"><span class="num">06</span><h2>Balón parado</h2></div>
     <p class="phz-intro">No es de librito. Las estrategias <b style="color:var(--fg)">varían según el rival y la situación</b> — entreno varios estilos y elijo según a quién enfrento, sin casarme con dos o tres jugadas. Estos son algunos de los que trabajo.</p>
     <div class="players">
@@ -684,7 +765,7 @@
   </section>
 
   <!-- LA TEMPORADA -->
-  <section id="temporada">
+  <section id="temporada" data-g="metodo">
     <div class="shead"><span class="num">07</span><h2>La temporada</h2></div>
     <p class="phz-intro">El equipo no se construye en una semana. Distribuyo los fundamentos a lo largo del año — de lo general a lo específico (construcción <b style="color:var(--fg)">up-bottom</b>) — dando a cada jugador el tiempo que mi método pide para entender cada concepto.</p>
 
@@ -727,7 +808,7 @@
   </section>
 
   <!-- FUNDAMENTOS SELECCIONADOS -->
-  <section id="fundamentos">
+  <section id="fundamentos" data-g="metodo">
     <div class="shead"><span class="num">08</span><h2>Fundamentos seleccionados</h2></div>
     <p class="phz-intro">Los fundamentos que elijo trabajar, ordenados por tipo. Los <b style="color:var(--fg)">universales</b> y los principios se entrenan toda la temporada; los de <b style="color:var(--fg)">línea</b> y por <b style="color:var(--fg)">demarcación</b> entran en la fase competitiva y se distribuyen de forma progresiva (ver sección 07).</p>
     <div class="mini-h">La ruta: por dónde empezamos</div>
@@ -781,14 +862,14 @@
   </section>
 
   <!-- LA SESIÓN -->
-  <section id="sesion">
+  <section id="sesion" data-g="metodo">
     <div class="shead"><span class="num">09</span><h2>La sesión</h2></div>
     <p class="phz-intro">Cada sesión la construyo <b style="color:var(--fg)">fase por fase</b>, con mi formato de ficha de trabajo. Este es un ejemplo de <b style="color:var(--fg)">sesión tipo</b> — día <b style="color:var(--fg)">MD-4</b>, orientación <b style="color:var(--fg)">Tensión</b>, 80 min. Toca cada fase de trabajo para ver su ficha completa.</p>
     <div id="sesion-ejemplo"></div>
   </section>
 
   <!-- STAFF -->
-  <section id="staff">
+  <section id="staff" data-g="staff">
     <div class="shead"><span class="num">10</span><h2>Staff y coordinación</h2></div>
     <p class="phz-intro">Dirijo un cuerpo técnico como un área. Cada rol tiene su función y unos <b style="color:var(--fg)">temas concretos</b> que trabajo con él para que todo conecte con el modelo. Toca cada uno.</p>
     <div class="staff">
@@ -804,7 +885,7 @@
   </section>
 
   <!-- PROYECTOS: CLUB / ACADEMIA -->
-  <section id="proyecto">
+  <section id="proyecto" data-g="club">
     <div class="shead"><span class="num">11</span><h2>Abierto a crear o formar un club / academia</h2></div>
     <p class="phz-intro">Además de dirigir equipos, estoy abierto a <b style="color:var(--fg)">construir un proyecto deportivo desde la base</b>: fundar una academia, formar un club nuevo o reestructurar las inferiores de uno existente. Mi modelo de juego y mi metodología están pensados para eso — <b style="color:var(--fg)">una misma idea, enseñada de lo general a lo específico</b>, desde los más pequeños hasta el primer equipo.</p>
     <div class="mini-h">Qué aporto al proyecto</div>
@@ -998,6 +1079,91 @@
     var mp=m.querySelector(".mp");
     if(mp && mp.nextSibling) m.insertBefore(box, mp.nextSibling); else m.appendChild(box);
   });
+})();
+</script>
+
+<script>
+/* ===== Pestañas por bloque + vista amplia de las 4 fases ===== */
+(function(){
+  var ORDER=["perfil","modelo","metodo","staff","club"], NAME={perfil:"Perfil",modelo:"Modelo de juego",metodo:"Metodología",staff:"Staff",club:"Club / academia"};
+  document.documentElement.classList.add("js-tabs");
+  var secs=[].slice.call(document.querySelectorAll("section[data-g]")), bar=document.getElementById("tabbar");
+  // botones anterior / siguiente al final de cada bloque
+  ORDER.forEach(function(g,i){
+    var last=secs.filter(function(s){return s.getAttribute("data-g")===g;}).pop(); if(!last) return;
+    var nav=document.createElement("div"); nav.className="gnav";
+    nav.innerHTML=(i>0?'<button data-go="'+ORDER[i-1]+'">← '+NAME[ORDER[i-1]]+'</button>':'')+(i<ORDER.length-1?'<button class="nx" data-go="'+ORDER[i+1]+'">Siguiente: '+NAME[ORDER[i+1]]+' →</button>':'<button class="nx" data-go="contacto">Contactar →</button>');
+    last.appendChild(nav);
+  });
+  function show(g,target,noScroll){
+    secs.forEach(function(s){ s.classList.toggle("hid", s.getAttribute("data-g")!==g); });
+    [].forEach.call(bar.querySelectorAll("button"),function(b){ var on=b.getAttribute("data-g")===g; b.classList.toggle("on",on); b.setAttribute("aria-selected",on); if(on&&b.scrollIntoView) b.scrollIntoView({block:"nearest",inline:"center"}); });
+    if(noScroll) return;
+    var el=target?document.getElementById(target):null;
+    var y=(el||bar).getBoundingClientRect().top+window.scrollY-(el?bar.offsetHeight+6:0);
+    window.scrollTo({top:Math.max(0,y),behavior:"smooth"});
+  }
+  bar.addEventListener("click",function(e){ var b=e.target.closest("button"); if(b) show(b.getAttribute("data-g")); });
+  document.addEventListener("click",function(e){
+    var b=e.target.closest("[data-go]");
+    if(b){ var g=b.getAttribute("data-go"); if(g==="contacto"){document.getElementById("contacto").scrollIntoView({behavior:"smooth"});} else show(g); return; }
+    var a=e.target.closest('a[href^="#"]'); if(!a) return;
+    var id=a.getAttribute("href").slice(1), s=id&&document.getElementById(id), sec=s&&(s.matches("section[data-g]")?s:s.closest("section[data-g]"));
+    if(sec){ e.preventDefault(); show(sec.getAttribute("data-g"), id); }
+  });
+  var h=location.hash.slice(1), hs=h&&document.getElementById(h), hsec=hs&&(hs.closest("section[data-g]"));
+  show(hsec?hsec.getAttribute("data-g"):"perfil", hsec?h:null, !hsec);
+  window.addEventListener("beforeprint",function(){ secs.forEach(function(s){s.classList.remove("hid");}); });
+
+  // ----- 4 fases -----
+  var fs=document.getElementById("fases"); if(!fs) return;
+  var phases=[].slice.call(fs.querySelectorAll("details.phase")).map(function(d){
+    return {icon:d.querySelector(".pn").textContent, name:d.querySelector(".ph-t b").textContent, sub:d.querySelector(".ph-t span").textContent,
+      moments:[].slice.call(d.querySelectorAll(".moment")).map(function(m){
+        var g=function(s){var x=m.querySelector(s);return x?x:null;};
+        var zones=[].slice.call(m.querySelectorAll(".zone")).map(function(z){return {k:z.querySelector(".zk").textContent,v:z.querySelector(".zv").textContent};});
+        var fund=g(".fund"), tr=g(".trains"), st=g(".mstruct");
+        return {t:g(".mt").textContent, pr:g(".mp").innerHTML.replace(/<b>Principio ·<\/b>\s*/,""), zones:zones,
+          fund:fund?fund.textContent.replace(/^\s*Fundamentos:\s*/,"").split(/\s+·\s+(?=[A-ZÁÉÍÓÚ][^—]*—)/):[],
+          tr:tr?tr.innerHTML:"", svg:st?st.querySelector(".mpbox").innerHTML:"", sname:st?st.querySelector(".msname b").textContent:""};
+      })};
+  });
+  if(!phases.length) return;
+  fs.classList.add("fx-on");
+  var wrap=document.createElement("div");
+  wrap.innerHTML='<div class="fx-ph" role="tablist">'+phases.map(function(p,i){return '<button data-p="'+i+'"><span class="i">'+p.icon+'</span><b>'+p.name+'</b><small>'+p.sub+'</small></button>';}).join("")+'</div><div class="fx-panel" id="fx-panel"></div>';
+  var intro=fs.querySelector(".phz-intro"); intro.parentNode.insertBefore(wrap, intro.nextSibling);
+  var panel=wrap.querySelector("#fx-panel"), cur={p:0,m:0};
+  var ZO={"Intervención":1,"Intermedia":.6,"Lejana":.3};
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c];});}
+  function render(anim){
+    var P=phases[cur.p], M=P.moments[cur.m];
+    [].forEach.call(wrap.querySelectorAll(".fx-ph button"),function(b){b.classList.toggle("on",+b.getAttribute("data-p")===cur.p);});
+    var flat=[];phases.forEach(function(p,i){p.moments.forEach(function(m,j){flat.push([i,j]);});});
+    var k=flat.findIndex(function(x){return x[0]===cur.p&&x[1]===cur.m;});
+    var lbl=function(x){return phases[x[0]].moments[x[1]].t+" · "+phases[x[0]].name;};
+    panel.innerHTML='<div class="fx-head"><div><h3>'+esc(P.name)+'</h3><p>'+esc(P.sub)+'</p></div><div class="fx-mo">'+P.moments.map(function(m,j){return '<button data-m="'+j+'" class="'+(j===cur.m?"on":"")+'">'+esc(m.t)+'</button>';}).join("")+'</div></div>'+
+      '<div class="fx-body'+(anim?' fx-anim':'')+'">'+
+        '<div class="fx-pitch">'+M.svg+'<div class="lab">Estructura<b>'+esc(M.sname)+'</b></div></div>'+
+        '<div><div class="fx-pr"><div class="k">Principio · '+esc(M.t)+'</div>'+M.pr+'</div>'+
+        (M.zones.length?'<div class="fx-sub">Sub-principios por zona</div><div class="fx-zones">'+M.zones.map(function(z){return '<div class="fx-z"><div class="k"><i style="--o:'+(ZO[z.k]||1)+'"></i>'+esc(z.k)+'</div><p>'+esc(z.v)+'</p></div>';}).join("")+'</div>':'')+
+        (M.fund.length?'<div class="fx-sub">Fundamentos que lo hacen posible</div><div class="fx-fund">'+M.fund.map(function(f){var x=f.split(/\s+—\s+/);return '<div class="fx-f">'+(x.length>1?'<b>'+esc(x[0].trim())+'</b><span>'+esc(x.slice(1).join(" — ").replace(/\.\s*$/,""))+'</span>':'<span>'+esc(f.replace(/\.\s*$/,""))+'</span>')+'</div>';}).join("")+'</div>':'')+
+        (M.tr?'<div class="fx-tr">'+M.tr+'</div>':'')+
+      '</div></div>'+
+      '<div class="fx-nav"><button data-k="'+(k-1)+'"'+(k<=0?' disabled':'')+'>← '+(k>0?esc(lbl(flat[k-1])):'Anterior')+'</button><button class="nx" data-k="'+(k+1)+'"'+(k>=flat.length-1?' disabled':'')+'>'+(k<flat.length-1?esc(lbl(flat[k+1])):'Fin')+' →</button></div>';
+    panel._flat=flat;
+  }
+  wrap.addEventListener("click",function(e){
+    var b=e.target.closest("button"); if(!b||b.disabled) return;
+    if(b.hasAttribute("data-p")){cur={p:+b.getAttribute("data-p"),m:0};
+      if(innerWidth<760){render(true); var y=panel.getBoundingClientRect().top+window.scrollY-bar.offsetHeight-8; window.scrollTo({top:y,behavior:"smooth"}); return;}}
+    else if(b.hasAttribute("data-m")){cur.m=+b.getAttribute("data-m");}
+    else if(b.hasAttribute("data-k")){var x=panel._flat[+b.getAttribute("data-k")]; cur={p:x[0],m:x[1]};
+      var t=wrap.querySelector(".fx-ph"); var y=t.getBoundingClientRect().top+window.scrollY-bar.offsetHeight-8; if(t.getBoundingClientRect().top<0) window.scrollTo({top:y,behavior:"smooth"});}
+    else return;
+    render(true);
+  });
+  render(false);
 })();
 </script>
 
