@@ -312,6 +312,17 @@
   .toolbtn.ghost{background:transparent;color:var(--fg);border-color:var(--line)}
 
 
+  /* ===== Adaptación al club ===== */
+  .adapt{margin-top:22px;border:1px solid var(--red-deep);border-radius:16px;background:linear-gradient(180deg,var(--red-soft),var(--panel));padding:18px}
+  .adapt-h{font-size:14.5px;line-height:1.55;color:#dcdde2}
+  .adapt-h b{color:var(--red);font-family:var(--font-head);font-size:16px;display:block;margin-bottom:3px}
+  .adapt-h i{color:var(--fg);font-style:normal;font-weight:600}
+  .adapt-g{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+  @media(max-width:640px){.adapt-g{grid-template-columns:1fr}}
+  .adapt-g div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 13px}
+  .adapt-g small{font:700 11px var(--font-head);color:var(--red);letter-spacing:.08em}
+  .adapt-g b{display:block;font:700 14px var(--font-head);margin-top:3px}
+  .adapt-g p{font-size:12.5px;color:var(--muted);margin-top:5px;line-height:1.5}
   /* ===== Cómo aprende el jugador ===== */
   .ap-lad{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:6px 0 4px;counter-reset:st}
   @media(max-width:700px){.ap-lad{grid-template-columns:1fr}}
@@ -498,7 +509,7 @@
         <li><b>Licencia PRO FMF / SNC</b> (Nº 00333) · Máster en Fútbol de Alto Rendimiento · Especialista en Scouting y Análisis de juego.</li>
         <li><b>Fútbol base FMF / Liga MX</b> «Mi Comunidad», Tijuana: dos equipos, <b>campeón y subcampeón</b>, con carta de recomendación oficial.</li>
         <li><b>Campeón y ascenso</b> en la liga amateur Romero Manzo (Segunda Premier → Liga Premier).</li>
-        <li><b>Modelo de juego propio:</b> juego asociativo en P-3-4-3, superioridades para encontrar al hombre libre y presión inmediata tras pérdida.</li>
+        <li><b>Modelo de juego propio, adaptable:</b> mi base es el juego asociativo en P-3-4-3 (superioridades, hombre libre, presión tras pérdida), pero <b>me adapto a la idea del club y a las características de los jugadores</b>.</li>
         <li><b>Metodología completa:</b> temporada por fases, mesociclo, microciclo semanal y fichas de sesión — de lo general a lo específico.</li>
         <li><b>Busco:</b> dirigir inferiores / fútbol formativo en un club de segunda división. <b>Abierto</b> a crear o formar un club o academia.</li>
       </ul>
@@ -562,6 +573,14 @@
   <section id="idea" data-g="modelo">
     <div class="shead"><span class="num">01</span><h2>Idea de juego</h2></div>
     <p class="idea-txt">Buscamos un <b>juego asociativo</b>: dominar el partido con la posesión del balón, generando constantemente <b>superioridades numéricas y posicionales</b>. Rompemos líneas de presión, encontramos al hombre libre y progresamos con el balón al campo rival para <b>crear y finalizar</b> situaciones de gol. En defensa, una presión media que permite jugar, orienta al rival a zonas favorables y entonces presiona fuerte; en la pérdida, <b>presión inmediata</b> para cortar la progresión y recuperar cerca de la portería contraria.</p>
+    <div class="adapt">
+      <div class="adapt-h"><b>Mi idea, adaptada a tu club.</b> Este es mi estilo, no un dogma. Mi trabajo es que el equipo juegue bien <i>con lo que es</i>: parto de la idea del club y de los jugadores que tengo, y desde ahí aplico mi metodología.</div>
+      <div class="adapt-g">
+        <div><small>01</small><b>La idea del club</b><p>Si el club ya tiene un estilo y una forma de jugar, la respeto y la desarrollo. Mi metodología sirve para enseñar cualquier modelo de juego.</p></div>
+        <div><small>02</small><b>Las características de los jugadores</b><p>El sistema y los principios se ajustan a lo que mis jugadores hacen bien. No fuerzo a un jugador a un rol que no le favorece.</p></div>
+        <div><small>03</small><b>La categoría y el contexto</b><p>La edad, el nivel, el rival y el momento de la temporada marcan qué se enseña primero y cómo.</p></div>
+      </div>
+    </div>
   </section>
 
   <section id="estructuras" data-g="modelo">
@@ -569,6 +588,7 @@
     <div class="forms">
       <div class="form"><div class="f">P-3-4-3</div><div class="l">Estructura principal · construcción desde tres, amplitud por fuera y tres puntas de ataque</div></div>
       <div class="form"><div class="f">P-4-3-3</div><div class="l">Variante · más equilibrio defensivo y salida de cuatro ante presión alta</div></div>
+      <div class="form"><div class="f">Según el club</div><div class="l">Si el club o los jugadores piden otra estructura, la adopto y enseño sus principios con la misma metodología</div></div>
     </div>
     <div class="mini-h">Cómo cambia la forma según el momento</div>
     <div class="pitchbtns" id="pbtns">
@@ -966,7 +986,7 @@
   <!-- PROYECTOS: CLUB / ACADEMIA -->
   <section id="proyecto" data-g="club">
     <div class="shead"><span class="num">11</span><h2>Abierto a crear o formar un club / academia</h2></div>
-    <p class="phz-intro">Además de dirigir equipos, estoy abierto a <b style="color:var(--fg)">construir un proyecto deportivo desde la base</b>: fundar una academia, formar un club nuevo o reestructurar las inferiores de uno existente. Mi modelo de juego y mi metodología están pensados para eso — <b style="color:var(--fg)">una misma idea, enseñada de lo general a lo específico</b>, desde los más pequeños hasta el primer equipo.</p>
+    <p class="phz-intro">Además de dirigir equipos, estoy abierto a <b style="color:var(--fg)">construir un proyecto deportivo desde la base</b>: fundar una academia, formar un club nuevo o reestructurar las inferiores de uno existente. Mi modelo de juego y mi metodología están pensados para eso — <b style="color:var(--fg)">una misma idea, enseñada de lo general a lo específico</b>, desde los más pequeños hasta el primer equipo. Y si el club ya tiene su propia identidad, <b style="color:var(--fg)">la adopto</b> y pongo mi metodología a su servicio.</p>
     <div class="mini-h">Qué aporto al proyecto</div>
     <div class="players">
       <div class="pl"><div class="tag">01 · Identidad</div><div class="pos">Modelo de juego común</div><p>Una sola idea de juego para todas las categorías: juego asociativo, superioridades y presión tras pérdida. Cada categoría aprende lo que su edad permite, pero todas hablan el mismo idioma.</p></div>
