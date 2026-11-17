@@ -326,8 +326,8 @@
   /* ===== Públicos: clubes · proyecto · padres · jugadores ===== */
   .chooser{margin-top:26px}
   .chooser .mini-h{margin-bottom:10px}
-  .ch-g{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-  @media(max-width:860px){.ch-g{grid-template-columns:1fr 1fr}}
+  .ch-g{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+  @media(max-width:860px){.ch-g{grid-template-columns:1fr 1fr}.ch-g button:last-child{grid-column:1/-1}}
   .ch-g button{text-align:left;cursor:pointer;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px;color:var(--fg);display:flex;flex-direction:column;gap:6px;transition:border-color .15s,transform .15s}
   .ch-g button:hover{transform:translateY(-2px);border-color:var(--red-deep)}
   .ch-g button.on{border-color:var(--red);background:linear-gradient(180deg,var(--red-soft),var(--panel))}
@@ -339,7 +339,8 @@
   .audb::-webkit-scrollbar{display:none}
   .audb button{flex:none;font:700 12px var(--font-body);letter-spacing:.02em;color:var(--muted);background:transparent;border:1px solid var(--line);border-radius:9px;padding:7px 11px;cursor:pointer;white-space:nowrap}
   .audb button.on{color:var(--red);border-color:var(--red);background:var(--red-soft)}
-  @media(max-width:520px){.tabbar .audb{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;overflow:visible}.tabbar .audb button{padding:5px 2px;font-size:10.5px;text-align:center;white-space:normal;line-height:1.3;min-width:0;border-radius:9px}}
+  @media(max-width:520px){.tabbar .audb{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px;overflow:visible}.tabbar .audb button{padding:5px 1px;font-size:9.5px;text-align:center;white-space:normal;line-height:1.3;min-width:0;border-radius:9px}}
+  @media(max-width:360px){.tabbar .audb button{font-size:8.6px;letter-spacing:-.01em}}
   .tabbar .tb[hidden]{display:none}
   .tabbar .tb button[hidden]{display:none}
   .js-tabs:not([data-aud="clubes"]) .quick{display:none}
@@ -522,7 +523,7 @@
   .js-tabs .gnav{display:flex;justify-content:space-between;gap:10px;padding:26px 0 6px}
   .gnav button{font:600 13.5px var(--font-body);border-radius:12px;padding:13px 18px;cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--fg)}
   .gnav button.nx{margin-left:auto;background:var(--red);border-color:var(--red);color:#1a1205}
-  .gnav button[hidden]{display:none}
+  .gnav button[hidden],.js-tabs .gnav[hidden]{display:none}
   .js-tabs .toc{display:none}
 
   /* ===== Las 4 fases (vista amplia) ===== */
@@ -664,12 +665,13 @@
       <button data-aud="proyecto"><span class="ci">🤝</span><b>Proyecto o escuela</b><small>Quiero crear o sumarme a un club, una academia, una escuela o un cuerpo técnico.</small></button>
       <button data-aud="padres"><span class="ci">👨‍👩‍👦</span><b>Padres de familia</b><small>Quiero entender cómo aprende mi hijo según su edad y sus capacidades.</small></button>
       <button data-aud="jugadores"><span class="ci">⚽</span><b>Jugadores</b><small>Quiero saber qué habilidades y fundamentos necesito en mi posición.</small></button>
+      <button data-aud="formadores"><span class="ci">🧑‍🏫</span><b>Entrenadores y formadores</b><small>Quiero aprender esta metodología para aplicarla con mis equipos.</small></button>
     </div>
   </div>
   <div class="tabbar" id="tabbar" role="tablist" aria-label="Bloques del portafolio"><div class="audb" id="audb">
-    <button data-aud="clubes">🏟️ Clubes</button><button data-aud="proyecto">🤝 Proyecto</button><button data-aud="padres">👨‍👩‍👦 Padres</button><button data-aud="jugadores">⚽ Jugadores</button>
+    <button data-aud="clubes">🏟️ Clubes</button><button data-aud="proyecto">🤝 Proyecto</button><button data-aud="padres">👨‍👩‍👦 Padres</button><button data-aud="jugadores">⚽ Jugadores</button><button data-aud="formadores">🧑‍🏫 Formadores</button>
   </div><div class="tb">
-    <button data-g="perfil">Perfil</button><button data-g="modelo">Modelo de juego</button><button data-g="aprende">Cómo aprende</button><button data-g="metodo">Metodología</button><button data-g="staff">Staff</button><button data-g="club">Club / academia</button>
+    <button data-g="form">Aprende la metodología</button><button data-g="perfil">Perfil</button><button data-g="modelo">Modelo de juego</button><button data-g="aprende">Cómo aprende</button><button data-g="metodo">Metodología</button><button data-g="staff">Staff</button><button data-g="club">Club / academia</button>
   </div></div>
 
   <section id="credenciales" data-g="perfil">
@@ -1202,7 +1204,7 @@
     <div class="shead"><span class="num">🤝</span><h2>Súmate al proyecto</h2></div>
     <p class="phz-intro">Un proyecto formativo se construye con personas que comparten la misma idea. Si quieres formar parte, así puedes sumarte:</p>
     <div class="sm">
-      <div><small>🧑‍🏫</small><b>Entrenadores</b><p>Trabajamos con la misma metodología, el mismo formato de sesión y los mismos criterios en todas las categorías, con formación continua dentro del cuerpo técnico.</p></div>
+      <div><small>🧑‍🏫</small><b>Entrenadores</b><p>Trabajamos con la misma metodología, el mismo formato de sesión y los mismos criterios en todas las categorías, con formación continua dentro del cuerpo técnico. <a href="#para-formadores" style="color:var(--red)">¿Quieres aprenderla? →</a></p></div>
       <div><small>🏫</small><b>Escuelas y colegios</b><p>Un programa de fútbol formativo con la ruta por etapas: de los comportamientos y las habilidades a los fundamentos y el juego.</p></div>
       <div><small>💼</small><b>Socios y patrocinadores</b><p>Para crear un club o una academia desde la base, con un proyecto deportivo claro y medible.</p></div>
     </div>
@@ -1239,6 +1241,29 @@
     <div class="shead"><span class="num">🏠</span><h2>Cómo acompañarlo</h2></div>
     <div class="casa"><div><b>Pregunta qué aprendió</b><p>Antes que “¿ganaste?”, pregunta “¿qué aprendiste hoy?” o “¿qué intentaste hacer?”.</p></div><div><b>Déjalo decidir</b><p>En el partido, deja que tome sus decisiones: las instrucciones desde la tribuna lo confunden.</p></div><div><b>Compáralo con él mismo</b><p>Cada niño madura a su ritmo. Lo importante es cuánto avanzó él, no si va adelante o atrás de otro.</p></div><div><b>Cuida lo de fuera de la cancha</b><p>Descanso, hidratación y alimentación también son parte del entrenamiento.</p></div><div><b>Que juegue libre</b><p>Jugar en la calle, en el parque y otros deportes desarrolla su coordinación y su creatividad.</p></div></div>
     <div class="adapt" style="margin-top:16px"><div class="adapt-h"><b>¿Tu hijo ya juega en una posición?</b>En la <a href="#guia-jugador" style="color:var(--red)">Guía del jugador</a> puede ver qué habilidades y fundamentos necesita según el jugador que quiere ser.</div></div>
+  </section>
+
+  <!-- ENTRENADORES Y FORMADORES -->
+  <section id="formadores" data-g="form">
+    <div class="shead"><span class="num">🧑‍🏫</span><h2>Para entrenadores y formadores</h2></div>
+    <p class="phz-intro">¿Quieres aprender esta metodología? Te enseño cómo la aplico, <b style="color:var(--fg)">del modelo de juego a la sesión</b> y <b style="color:var(--fg)">de la habilidad al fundamento</b>, para que la adaptes a tu club, a tus jugadores y a su edad.</p>
+    <div class="mini-h">Qué vas a aprender</div>
+    <div class="m2">
+      <div><b>Construir un modelo de juego</b><p>Idea de juego, estructuras según el momento, las 4 fases con principios y sub-principios por zona, y balón parado.</p><small><a href="#fases" style="color:inherit">Ver las 4 fases →</a></small></div>
+      <div><b>La cadena del aprendizaje</b><p>Cómo las habilidades perceptivas y motrices construyen cada fundamento, y cómo un fundamento individual se vuelve de línea y de equipo.</p><small><a href="#aprende" style="color:inherit">Ver cómo aprende el jugador →</a></small></div>
+      <div><b>Planificar la temporada</b><p>Fases del año, mesociclo y microciclo semanal: qué se trabaja cada día y con qué orientación de carga.</p><small><a href="#temporada" style="color:inherit">Ver la temporada →</a></small></div>
+      <div><b>Diseñar sesiones</b><p>La ficha de tarea completa: consigna, espacio, normativa, puntuación, gradiente y preguntas de feedback.</p><small><a href="#sesion" style="color:inherit">Ver una sesión tipo →</a></small></div>
+      <div><b>Evaluar al jugador</b><p>Diagnóstico, no calificación: detectar qué habilidad le falta para dominar un fundamento y con qué juego desarrollarla.</p><small><a href="#aprende" style="color:inherit">Ver cómo evalúo →</a></small></div>
+      <div><b>Formar jugadores en 2 o 3 posiciones</b><p>Asignar posiciones compatibles según sus cualidades y construir un modelo rotativo que se adapte al rival y al momento.</p><small><a href="#guia-jugador" style="color:inherit">Ver la guía del jugador →</a></small></div>
+    </div>
+    <div class="mini-h" style="margin-top:24px">Para quién es</div>
+    <div class="sm">
+      <div><small>⚽</small><b>Entrenadores de fútbol base</b><p>Que quieren un método claro para enseñar de lo simple a lo complejo.</p></div>
+      <div><small>📋</small><b>Coordinadores y directores de academia</b><p>Que buscan una misma idea y un mismo formato para todas sus categorías.</p></div>
+      <div><small>🎓</small><b>Formadores en preparación</b><p>Estudiantes de licencia, profesores de educación física y quien empieza a dirigir.</p></div>
+    </div>
+    <div class="adapt" style="margin-top:16px"><div class="adapt-h"><b>Platiquemos el formato que mejor te funcione.</b>Escríbeme, cuéntame con qué categorías trabajas y qué te gustaría aprender, y lo organizamos juntos.</div></div>
+    <a class="wa-btn" style="margin-top:16px" href="https://wa.me/526371377861?text=Hola%20Mario%2C%20soy%20entrenador%20y%20me%20gustar%C3%ADa%20aprender%20tu%20metodolog%C3%ADa." target="_blank" rel="noopener">Quiero aprender la metodología · WhatsApp</a>
   </section>
 
   <!-- JUGADORES -->
@@ -1445,24 +1470,27 @@
     clubes:{g:["perfil","modelo","aprende","metodo","staff"],t:"¿Buscas un entrenador para tus inferiores o fútbol formativo? Hablemos.",w:"vi tu portafolio y me gustaría platicar."},
     proyecto:{g:["club"],t:"¿Quieres crear o sumarte a un proyecto de club, academia o escuela? Hablemos.",w:"me interesa platicar sobre un proyecto de club, academia o escuela."},
     padres:{g:["padres"],t:"¿Tienes dudas sobre el desarrollo de tu hijo o hija? Escríbeme.",w:"soy padre/madre de familia y me gustaría información sobre tu metodología."},
-    jugadores:{g:["jug"],t:"¿Quieres entrenar con esta metodología? Escríbeme.",w:"soy jugador y me gustaría entrenar contigo."}
+    jugadores:{g:["jug"],t:"¿Quieres entrenar con esta metodología? Escríbeme.",w:"soy jugador y me gustaría entrenar contigo."},
+    formadores:{g:["form","aprende","metodo"],t:"¿Quieres aprender esta metodología? Contáctame.",w:"soy entrenador/formador y me gustaría aprender tu metodología."}
   };
-  var NAME={perfil:"Perfil",modelo:"Modelo de juego",aprende:"Cómo aprende",metodo:"Metodología",staff:"Staff",club:"Club / academia",padres:"Padres",jug:"Jugadores"};
+  var NAME={perfil:"Perfil",modelo:"Modelo de juego",aprende:"Cómo aprende",metodo:"Metodología",staff:"Staff",club:"Club / academia",padres:"Padres",form:"Aprende la metodología",jug:"Jugadores"};
   var root=document.documentElement; root.classList.add("js-tabs");
   var secs=[].slice.call(document.querySelectorAll("section[data-g]")), bar=document.getElementById("tabbar"), tb=bar.querySelector(".tb");
-  function audOf(g){for(var k in AUD){if(AUD[k].g.indexOf(g)>-1)return k;}return "clubes";}
+  var cur="clubes";
+  function audOf(g){if(AUD[cur]&&AUD[cur].g.indexOf(g)>-1)return cur; for(var k in AUD){if(AUD[k].g.indexOf(g)>-1)return k;}return "clubes";}
   Object.keys(AUD).forEach(function(k){ var O=AUD[k].g;
     O.forEach(function(g,i){
       var last=secs.filter(function(s){return s.getAttribute("data-g")===g;}).pop(); if(!last) return;
-      var nav=document.createElement("div"); nav.className="gnav";
+      var nav=document.createElement("div"); nav.className="gnav"; nav.setAttribute("data-na",k);
       nav.innerHTML=(i>0?'<button data-go="'+O[i-1]+'">← '+NAME[O[i-1]]+'</button>':'')+(i<O.length-1?'<button class="nx" data-go="'+O[i+1]+'">Siguiente: '+NAME[O[i+1]]+' →</button>':'<button class="nx" data-go="contacto">Contactar →</button>');
       last.appendChild(nav);
     });
   });
   var ctT=document.getElementById("ct-txt"), ctW=document.getElementById("ct-wa");
   function show(g,target,noScroll){
-    var k=audOf(g), A=AUD[k];
+    var k=audOf(g), A=AUD[k]; cur=k;
     root.setAttribute("data-aud",k);
+    [].forEach.call(document.querySelectorAll(".gnav"),function(n){ n.hidden=n.getAttribute("data-na")!==k; });
     secs.forEach(function(s){ s.classList.toggle("hid", s.getAttribute("data-g")!==g); });
     [].forEach.call(document.querySelectorAll("[data-aud]"),function(b){ if(b.tagName==="BUTTON") b.classList.toggle("on",b.getAttribute("data-aud")===k); });
     tb.hidden=A.g.length<2;
