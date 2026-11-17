@@ -323,6 +323,97 @@
   .adapt-g small{font:700 11px var(--font-head);color:var(--red);letter-spacing:.08em}
   .adapt-g b{display:block;font:700 14px var(--font-head);margin-top:3px}
   .adapt-g p{font-size:12.5px;color:var(--muted);margin-top:5px;line-height:1.5}
+  /* ===== Públicos: clubes · proyecto · padres · jugadores ===== */
+  .chooser{margin-top:26px}
+  .chooser .mini-h{margin-bottom:10px}
+  .ch-g{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  @media(max-width:860px){.ch-g{grid-template-columns:1fr 1fr}}
+  .ch-g button{text-align:left;cursor:pointer;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px;color:var(--fg);display:flex;flex-direction:column;gap:6px;transition:border-color .15s,transform .15s}
+  .ch-g button:hover{transform:translateY(-2px);border-color:var(--red-deep)}
+  .ch-g button.on{border-color:var(--red);background:linear-gradient(180deg,var(--red-soft),var(--panel))}
+  .ch-g .ci{font-size:22px;line-height:1}
+  .ch-g b{font:700 15px/1.2 var(--font-head)}
+  .ch-g small{font-size:12px;color:var(--muted);line-height:1.4}
+  @media(max-width:520px){.ch-g button{padding:13px}.ch-g small{display:none}}
+  .audb{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin-bottom:8px}
+  .audb::-webkit-scrollbar{display:none}
+  .audb button{flex:none;font:700 12px var(--font-body);letter-spacing:.02em;color:var(--muted);background:transparent;border:1px solid var(--line);border-radius:9px;padding:7px 11px;cursor:pointer;white-space:nowrap}
+  .audb button.on{color:var(--red);border-color:var(--red);background:var(--red-soft)}
+  @media(max-width:520px){.tabbar .audb{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;overflow:visible}.tabbar .audb button{padding:5px 2px;font-size:10.5px;text-align:center;white-space:normal;line-height:1.3;min-width:0;border-radius:9px}}
+  .tabbar .tb[hidden]{display:none}
+  .tabbar .tb button[hidden]{display:none}
+  .js-tabs:not([data-aud="clubes"]) .quick{display:none}
+  .pd-ideas{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  @media(max-width:700px){.pd-ideas{grid-template-columns:1fr}}
+  .pd-ideas div{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px}
+  .pd-ideas b{display:block;font:700 15px var(--font-head);margin-bottom:5px}
+  .pd-ideas p{font-size:13px;line-height:1.55;color:#cfd0d6}
+  .esc{display:grid;gap:0;margin-top:4px}
+  .esc div{position:relative;display:grid;grid-template-columns:44px 1fr;gap:12px;padding:0 0 14px}
+  .esc div::before{content:"";position:absolute;left:21px;top:40px;bottom:0;width:2px;background:var(--line)}
+  .esc div:last-child::before{display:none}
+  .esc .n{width:44px;height:44px;border-radius:12px;background:var(--red-soft);border:1px solid var(--red-deep);color:var(--red);display:grid;place-items:center;font:800 17px var(--font-head)}
+  .esc div:last-child .n{background:var(--red);color:#1a1205}
+  .esc b{display:block;font:700 15px var(--font-head);margin-top:3px}
+  .esc p{font-size:13px;line-height:1.5;color:#cfd0d6;margin-top:3px}
+  .pf{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+  @media(max-width:760px){.pf{grid-template-columns:1fr 1fr}}
+  .pf div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px}
+  .pf small{font:700 11px var(--font-head);color:var(--red)}
+  .pf b{display:block;font:700 14px var(--font-head);margin-top:2px}
+  .pf p{font-size:12.5px;color:var(--muted);margin-top:4px;line-height:1.45}
+  .pf.def div{border-left:3px solid #6b7fa0}
+  .et-p{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px}
+  .et-p h3{font:700 20px var(--font-head)}
+  .et-p h3 span{color:var(--red);margin-right:8px}
+  .et-g{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+  @media(max-width:640px){.et-g{grid-template-columns:1fr}}
+  .et-g div{background:var(--panel-2);border:1px solid var(--line);border-radius:12px;padding:12px 13px}
+  .et-g small{display:block;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-bottom:5px}
+  .et-g p{font-size:13px;line-height:1.55;color:#dcdde2}
+  .casa{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
+  .casa div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 13px}
+  .casa b{display:block;font:700 14px var(--font-head)}
+  .casa p{font-size:12.5px;color:#cfd0d6;margin-top:5px;line-height:1.5}
+  .gj-f{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px}
+  .gj-f button{font:600 12.5px var(--font-body);cursor:pointer;color:var(--muted);background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:8px 13px}
+  .gj-f button.on{color:#1a1205;background:var(--red);border-color:var(--red)}
+  .gj-l{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:12px 0 7px}
+  .gj-r{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+  @media(max-width:760px){.gj-r{grid-template-columns:1fr 1fr}}
+  .gj-r button{text-align:left;cursor:pointer;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:11px 12px;color:var(--fg);display:flex;flex-direction:column;gap:3px}
+  .gj-r button b{font:700 13.5px/1.2 var(--font-head)}
+  .gj-r button small{font-size:10.5px;font-weight:700;letter-spacing:.06em;color:var(--muted)}
+  .gj-r button.on{border-color:var(--red);background:linear-gradient(180deg,var(--red-soft),var(--panel))}
+  .gj-r button.off{opacity:.3}
+  .gj-p{margin-top:16px;background:var(--panel);border:1px solid var(--red-deep);border-radius:18px;padding:18px}
+  .gj-top{display:grid;grid-template-columns:150px 1fr;gap:18px;align-items:start}
+  @media(max-width:560px){.gj-top{grid-template-columns:96px 1fr;gap:12px}}
+  .gj-top svg{width:100%;height:auto;display:block}
+  .gj-top h3{font:700 clamp(20px,3vw,26px) var(--font-head)}
+  .gj-top .tp{display:inline-block;margin-top:6px;font-size:11px;font-weight:700;color:#1a1205;background:var(--red);border-radius:6px;padding:3px 8px}
+  .gj-top .tp.l{background:transparent;color:var(--red);border:1px solid var(--red-deep);margin-left:4px}
+  .gj-top p{margin-top:10px;font-size:14px;line-height:1.55;color:#dcdde2}
+  .gj-s{margin-top:16px;font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
+  .gj-s span{color:var(--muted);font-weight:600;letter-spacing:0;text-transform:none;margin-left:6px}
+  .gj-g{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+  @media(max-width:640px){.gj-g{grid-template-columns:1fr}}
+  .gj-g div{background:var(--panel-2);border:1px solid var(--line);border-radius:12px;padding:11px 12px}
+  .gj-g small{display:block;font-size:9.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+  .gj-g p{font-size:13px;line-height:1.5;color:#dcdde2}
+  .gj-c{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .gj-c button{font:600 12.5px var(--font-body);cursor:pointer;color:var(--fg);background:var(--panel-2);border:1px dashed var(--red-deep);border-radius:10px;padding:8px 12px}
+  .gj-c span{font-size:12.5px;color:var(--muted);border:1px dashed var(--line);border-radius:10px;padding:8px 12px}
+  .gj-tr{margin-top:8px;font-size:13px;color:#e8e2d6;background:var(--panel-2);border:1px dashed var(--red-deep);border-radius:10px;padding:9px 13px}
+  .sm{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  @media(max-width:700px){.sm{grid-template-columns:1fr}}
+  .sm div{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px}
+  .sm small{font-size:22px}
+  .sm b{display:block;font:700 15px var(--font-head);margin-top:6px}
+  .sm p{font-size:13px;color:#cfd0d6;margin-top:5px;line-height:1.5}
+  @media print{.chooser,.audb,.gj-f,.gj-r,.et-sw{display:none!important}.et-p .et-one{display:block!important;margin-bottom:12px}.gj-p{display:none!important}.gj-print{display:block!important}}
+  .gj-print{display:none}
+  .et-one{display:none}.et-one.on{display:block}
   /* ===== Cómo aprende · cadena y mapas ===== */
   .chip.leer{border-color:#2f4a63;color:#bfe0ff}
   .chip.hacer{border-color:var(--red-deep);color:#f0cf95}
@@ -566,7 +657,18 @@
       <a href="#idea"><span>01</span>Idea de juego</a><a href="#estructuras"><span>02</span>Estructuras</a><a href="#jugadores"><span>03</span>Jugadores</a><a href="#valores"><span>04</span>Valores</a><a href="#fases"><span>05</span>4 fases</a><a href="#abp"><span>06</span>Balón parado</a><a href="#aprende"><span>★</span>Cómo aprende</a><a href="#temporada"><span>07</span>Temporada</a><a href="#fundamentos"><span>08</span>Fundamentos</a><a href="#sesion"><span>09</span>Sesión</a><a href="#staff"><span>10</span>Staff</a><a href="#proyecto"><span>11</span>Club / academia</a><a href="#contacto"><span>12</span>Contacto</a>
     </nav>
   </header>
-  <div class="tabbar" id="tabbar" role="tablist" aria-label="Bloques del portafolio"><div class="tb">
+  <div class="chooser" id="chooser">
+    <div class="mini-h">¿Quién eres? Elige tu camino</div>
+    <div class="ch-g">
+      <button data-aud="clubes"><span class="ci">🏟️</span><b>Clubes y directivos</b><small>Busco un entrenador profesional: credenciales, modelo de juego, metodología y staff.</small></button>
+      <button data-aud="proyecto"><span class="ci">🤝</span><b>Proyecto o escuela</b><small>Quiero crear o sumarme a un club, una academia, una escuela o un cuerpo técnico.</small></button>
+      <button data-aud="padres"><span class="ci">👨‍👩‍👦</span><b>Padres de familia</b><small>Quiero entender cómo aprende mi hijo según su edad y sus capacidades.</small></button>
+      <button data-aud="jugadores"><span class="ci">⚽</span><b>Jugadores</b><small>Quiero saber qué habilidades y fundamentos necesito en mi posición.</small></button>
+    </div>
+  </div>
+  <div class="tabbar" id="tabbar" role="tablist" aria-label="Bloques del portafolio"><div class="audb" id="audb">
+    <button data-aud="clubes">🏟️ Clubes</button><button data-aud="proyecto">🤝 Proyecto</button><button data-aud="padres">👨‍👩‍👦 Padres</button><button data-aud="jugadores">⚽ Jugadores</button>
+  </div><div class="tb">
     <button data-g="perfil">Perfil</button><button data-g="modelo">Modelo de juego</button><button data-g="aprende">Cómo aprende</button><button data-g="metodo">Metodología</button><button data-g="staff">Staff</button><button data-g="club">Club / academia</button>
   </div></div>
 
@@ -1096,10 +1198,64 @@
     <a class="wa-btn" style="margin-top:20px" href="https://wa.me/526371377861?text=Hola%20Mario%2C%20me%20interesa%20platicar%20sobre%20un%20proyecto%20de%20club%20o%20academia." target="_blank" rel="noopener">Platiquemos tu proyecto · WhatsApp</a>
   </section>
 
+  <section id="sumate" data-g="club">
+    <div class="shead"><span class="num">🤝</span><h2>Súmate al proyecto</h2></div>
+    <p class="phz-intro">Un proyecto formativo se construye con personas que comparten la misma idea. Si quieres formar parte, así puedes sumarte:</p>
+    <div class="sm">
+      <div><small>🧑‍🏫</small><b>Entrenadores</b><p>Trabajamos con la misma metodología, el mismo formato de sesión y los mismos criterios en todas las categorías, con formación continua dentro del cuerpo técnico.</p></div>
+      <div><small>🏫</small><b>Escuelas y colegios</b><p>Un programa de fútbol formativo con la ruta por etapas: de los comportamientos y las habilidades a los fundamentos y el juego.</p></div>
+      <div><small>💼</small><b>Socios y patrocinadores</b><p>Para crear un club o una academia desde la base, con un proyecto deportivo claro y medible.</p></div>
+    </div>
+    <a class="wa-btn" style="margin-top:20px" href="https://wa.me/526371377861?text=Hola%20Mario%2C%20me%20gustar%C3%ADa%20sumarme%20al%20proyecto." target="_blank" rel="noopener">Quiero sumarme · WhatsApp</a>
+  </section>
+
+  <!-- PADRES DE FAMILIA -->
+  <section id="padres-metodo" data-g="padres">
+    <div class="shead"><span class="num">👨‍👩‍👦</span><h2>Para padres de familia</h2></div>
+    <p class="phz-intro">Así trabajamos con tu hijo o hija, en palabras sencillas. El objetivo no es solo que gane partidos: es que <b style="color:var(--fg)">entienda el juego, disfrute y crezca como persona y como jugador</b>, cada uno a su ritmo.</p>
+    <div class="pd-ideas">
+      <div><b>Aprende jugando</b><p>Casi todo se enseña con juegos, no con filas ni vueltas a la cancha. Vamos de lo simple a lo complejo: primero lo que puede hacer solo, luego con compañeros, al final con todo el equipo.</p></div>
+      <div><b>Primero mirar, luego hacer</b><p>Antes de tocar el balón, el jugador tiene que mirar dónde están sus compañeros y los espacios. Por eso le pedimos tanto que gire la cabeza: un buen pase empieza con una buena mirada.</p></div>
+      <div><b>Cada niño a su ritmo</b><p>No ponemos calificaciones: buscamos qué le falta para dar el siguiente paso y lo trabajamos. Lo comparamos con él mismo, nunca con otros.</p></div>
+    </div>
+    <div class="mini-h" style="margin-top:26px">La escalera: así se va aprendiendo</div>
+    <p class="muted" style="font-size:12.5px;margin:-6px 0 12px">Cada escalón se apoya en el anterior. Cuando el jugador domina ciertos comportamientos y habilidades, pasamos a los fundamentos; cuando domina los fundamentos, pasamos a su posición y al modelo de juego.</p>
+    <div class="esc"><div><span class="n">1</span><span><b>Comportamientos</b><p>Escuchar, esperar turno, compartir el balón, ayudar al compañero y levantarse después de un error. Es la base de todo lo demás.</p></span></div><div><span class="n">2</span><span><b>El cuerpo</b><p>Correr, frenar, saltar, girar, caer y levantarse con equilibrio. Las habilidades motrices básicas.</p></span></div><div><span class="n">3</span><span><b>El balón</b><p>Muchos toques con los dos pies: conducir, controlar, pasar y tirar. Las habilidades motrices específicas.</p></span></div><div><span class="n">4</span><span><b>Mirar antes</b><p>Girar la cabeza antes de recibir y colocar el cuerpo para ver el balón y la cancha. Se trabaja desde el primer día, dentro del juego.</p></span></div><div><span class="n">5</span><span><b>Fundamentos básicos</b><p>Las acciones de fútbol: apoyo, desmarque, control orientado, cobertura, temporización… primero solo, luego con compañeros.</p></span></div><div><span class="n">6</span><span><b>Fundamentos colectivos y de línea</b><p>Jugar con el tercer hombre, crear superioridad, coordinarse con su línea.</p></span></div><div><span class="n">7</span><span><b>Su posición y el modelo</b><p>Dominar 2 o 3 posiciones según sus cualidades y saber adaptarse a distintos sistemas y momentos del partido.</p></span></div></div>
+    <div class="mini-h" style="margin-top:26px">Los primeros fundamentos, en orden</div>
+    <p class="muted" style="font-size:12.5px;margin:-6px 0 10px">Estos son los primeros que se van resolviendo. Uno abre la puerta al siguiente.</p>
+    <div class="pf"><div><small>1</small><b>Conducción</b><p>Llevar el balón pegado, mirando hacia delante.</p></div><div><small>2</small><b>Control</b><p>Parar el balón y dejarlo listo para jugar.</p></div><div><small>3</small><b>Pase</b><p>Darle el balón a un compañero con la fuerza justa.</p></div><div><small>4</small><b>Perfil orientado</b><p>Colocar el cuerpo para ver el balón y la cancha a la vez.</p></div><div><small>5</small><b>Control y pase orientado</b><p>Recibir llevando el balón hacia donde va a jugar.</p></div><div><small>6</small><b>Disparo</b><p>Terminar la jugada con un tiro a portería.</p></div><div><small>7</small><b>Descarga (pared)</b><p>Devolver de primera a un compañero para que siga la jugada.</p></div><div><small>8</small><b>Tercer hombre</b><p>Pasar a uno para que se la dé a un tercero que llega libre.</p></div></div>
+    <p class="gj-l" style="margin-top:14px">Y para defender</p>
+    <div class="pf def"><div><small>1</small><b>Acoso</b><p>Presionar de cerca al que tiene el balón.</p></div><div><small>2</small><b>Temporización</b><p>Esperar el momento justo, sin lanzarse.</p></div><div><small>3</small><b>Cobertura</b><p>Colocarse detrás del compañero que presiona.</p></div></div>
+  </section>
+
+  <section id="padres-edades" data-g="padres">
+    <div class="shead"><span class="num">🧒</span><h2>Qué saber de tu hijo según su edad</h2></div>
+    <p class="phz-intro">Lo que puede aprender depende de su edad, de su desarrollo físico y de su nivel cognitivo. Toca su edad. <span style="color:var(--muted)">Las edades son orientativas: cada niño madura a su ritmo.</span></p>
+    <div class="gj-f et-sw" data-esw><button data-t="0" class="on">5-7 años</button><button data-t="1" class="">8-9 años</button><button data-t="2" class="">10-12 años</button><button data-t="3" class="">13-15 años</button><button data-t="4" class="">16-18 años</button></div>
+    <div class="et-p" data-egr><div class="et-one on" data-t="0"><h3><span>5-7 años</span>Descubrir y disfrutar</h3><div class="et-g"><div><small>Cómo piensa y siente</small><p>Aprende jugando e imitando. Su atención dura poco y se centra en sí mismo y en el balón: que todos vayan al balón es normal.</p></div><div><small>Qué priorizamos</small><p>Motricidad básica (correr, saltar, girar, equilibrio) y mucho contacto con el balón: conducción y control.</p></div><div><small>Comportamientos que buscamos</small><p>Escuchar una consigna sencilla, esperar su turno, compartir el balón y levantarse tras un error.</p></div><div><small>Señales de que va avanzando</small><p>Llega con ganas, usa los dos pies y cada vez pierde menos el equilibrio.</p></div></div></div><div class="et-one" data-t="1"><h3><span>8-9 años</span>Jugar con otros</h3><div class="et-g"><div><small>Cómo piensa y siente</small><p>Empieza a cooperar, entiende reglas sencillas y le gusta competir. Sigue aprendiendo mucho por imitación.</p></div><div><small>Qué priorizamos</small><p>Técnica con balón (conducción, control, pase, tiro) y las primeras habilidades para leer: mirar antes de recibir.</p></div><div><small>Comportamientos que buscamos</small><p>Pasar a un compañero mejor ubicado, ofrecerse para recibir y animar al equipo.</p></div><div><small>Señales de que va avanzando</small><p>Levanta la cabeza al conducir y da pases con intención.</p></div></div></div><div class="et-one" data-t="2"><h3><span>10-12 años</span>La edad de oro para aprender</h3><div class="et-g"><div><small>Cómo piensa y siente</small><p>Razona y quiere entender el porqué. Es la etapa en la que más fácil aprende los gestos técnicos.</p></div><div><small>Qué priorizamos</small><p>Fundamentos básicos individuales y colectivos: control orientado, desmarque, apoyo, cobertura, líneas de pase y superioridad. Prueba muchas posiciones.</p></div><div><small>Comportamientos que buscamos</small><p>Tomar decisiones y aceptar el error como parte de aprender; respetar su rol y el de los demás.</p></div><div><small>Señales de que va avanzando</small><p>Sabe explicar qué intentó hacer en una jugada y se mueve bien sin balón.</p></div></div></div><div class="et-one" data-t="3"><h3><span>13-15 años</span>Cambios y primeras posiciones</h3><div class="et-g"><div><small>Cómo piensa y siente</small><p>Piensa en el equipo y en abstracto. Vive cambios físicos (el estirón) que pueden descoordinarlo un tiempo, y la autoestima pesa mucho.</p></div><div><small>Qué priorizamos</small><p>Fundamentos de línea y del modelo de juego; sus primeras 2-3 posiciones según sus cualidades; fuerza con su propio peso.</p></div><div><small>Comportamientos que buscamos</small><p>Responsabilidad con su línea, autocrítica y cuidar el descanso y la alimentación.</p></div><div><small>Señales de que va avanzando</small><p>Entiende su rol en las distintas estructuras del equipo.</p></div></div></div><div class="et-one" data-t="4"><h3><span>16-18 años</span>Competir con el modelo</h3><div class="et-g"><div><small>Cómo piensa y siente</small><p>Piensa como futbolista: puede analizar el juego y su propio rendimiento.</p></div><div><small>Qué priorizamos</small><p>El modelo de juego completo, rotación entre sus 2-3 posiciones, carga física progresiva y preparación para competir.</p></div><div><small>Comportamientos que buscamos</small><p>Liderazgo, profesionalismo y manejo de la presión.</p></div><div><small>Señales de que va avanzando</small><p>Se adapta a distintos sistemas y momentos del partido sin perder su función.</p></div></div></div></div>
+  </section>
+
+  <section id="padres-casa" data-g="padres">
+    <div class="shead"><span class="num">🏠</span><h2>Cómo acompañarlo</h2></div>
+    <div class="casa"><div><b>Pregunta qué aprendió</b><p>Antes que “¿ganaste?”, pregunta “¿qué aprendiste hoy?” o “¿qué intentaste hacer?”.</p></div><div><b>Déjalo decidir</b><p>En el partido, deja que tome sus decisiones: las instrucciones desde la tribuna lo confunden.</p></div><div><b>Compáralo con él mismo</b><p>Cada niño madura a su ritmo. Lo importante es cuánto avanzó él, no si va adelante o atrás de otro.</p></div><div><b>Cuida lo de fuera de la cancha</b><p>Descanso, hidratación y alimentación también son parte del entrenamiento.</p></div><div><b>Que juegue libre</b><p>Jugar en la calle, en el parque y otros deportes desarrolla su coordinación y su creatividad.</p></div></div>
+    <div class="adapt" style="margin-top:16px"><div class="adapt-h"><b>¿Tu hijo ya juega en una posición?</b>En la <a href="#guia-jugador" style="color:var(--red)">Guía del jugador</a> puede ver qué habilidades y fundamentos necesita según el jugador que quiere ser.</div></div>
+  </section>
+
+  <!-- JUGADORES -->
+  <section id="guia-jugador" data-g="jug">
+    <div class="shead"><span class="num">⚽</span><h2>Guía del jugador</h2></div>
+    <p class="phz-intro">¿Qué jugador quieres ser? Elige tu posición y mira <b style="color:var(--fg)">qué habilidades tienes que dominar primero</b>, qué fundamentos tienes que conocer y con qué otras posiciones te puedes complementar. Todas las habilidades importan; aquí están <b style="color:var(--fg)">las que más necesitas</b> en tu posición.</p>
+    <div class="gj-f" id="gj-f"><button data-f="" class="on">Todos</button><button data-f="Defensivo">Defensivos</button><button data-f="Mixto">Mixtos</button><button data-f="Ofensivo">Ofensivos</button></div>
+    <div id="gj-grid"><p class="gj-l">Portería</p><div class="gj-r"><button data-r="por" data-tipo="Especial"><b>Portero-líbero</b><small>POR · Especial</small></button></div><p class="gj-l">Defensa</p><div class="gj-r"><button data-r="dseg" data-tipo="Defensivo"><b>Defensa de seguridad</b><small>DFD · Defensivo</small></button><button data-r="dsal" data-tipo="Defensivo"><b>Defensa de salida</b><small>DFI · Defensivo</small></button><button data-r="dcre" data-tipo="Mixto"><b>Defensa creativo</b><small>DFC · Mixto</small></button></div><p class="gj-l">Medio campo</p><div class="gj-r"><button data-r="car" data-tipo="Mixto"><b>Carrilero</b><small>CAI · CAD · Mixto</small></button><button data-r="cont" data-tipo="Defensivo"><b>Medio de contención</b><small>MC · Defensivo</small></button><button data-r="piv" data-tipo="Mixto"><b>Medio pivote</b><small>MC · Mixto</small></button><button data-r="box" data-tipo="Mixto"><b>Box to box</b><small>MC · Mixto</small></button><button data-r="eng" data-tipo="Ofensivo"><b>Enganche</b><small>MP · Ofensivo</small></button></div><p class="gj-l">Ataque</p><div class="gj-r"><button data-r="ext" data-tipo="Ofensivo"><b>Extremo</b><small>EI · ED · Ofensivo</small></button><button data-r="dmov" data-tipo="Ofensivo"><b>Delantero móvil</b><small>DC · Ofensivo</small></button><button data-r="drup" data-tipo="Ofensivo"><b>Delantero de ruptura</b><small>DC · Ofensivo</small></button></div></div>
+    <div class="gj-p" id="gj-p"></div>
+    <div class="gj-print"><div style="margin-bottom:10px"><b>Portero-líbero (POR)</b> — Eres el primer atacante y el último defensor: juegas con los pies como uno más en la salida y cubres la espalda de tu defensa.<br><small>Habilidades: Orientación del cuerpo, Espacio alejado, Centro de juego, Desplazamientos, Saltos, Caídas, Pase · Fundamentos: Rechace, lectura, colocación, cobertura del espacio a la espalda; Control orientado, pase corto y largo, conducción (juego de pies)</small></div><div style="margin-bottom:10px"><b>Defensa de seguridad (DFD)</b> — Ganas los duelos y el juego aéreo. Con tu marca y tus coberturas, el equipo está tranquilo: contigo no pasan.<br><small>Habilidades: Espacio cercano, Girar la cabeza, Orientación del cuerpo, Luchas, Saltos, Aceleraciones, Frenadas, Cabeceo · Fundamentos: Marcaje, entrada, cobertura, temporización, duelo aéreo; Despeje / rechace, pase de seguridad</small></div><div style="margin-bottom:10px"><b>Defensa de salida (DFI)</b> — Eres un defensa con pies de mediocampista: sales jugando bajo presión, eres opción de pase siempre y rompes líneas con el pase.<br><small>Habilidades: Girar la cabeza, Espacio cercano, Centro de juego, Control, Conducción del balón, Pase, Protección de balón · Fundamentos: Cobertura, interceptación; Control orientado, conducción, pase que rompe línea</small></div><div style="margin-bottom:10px"><b>Defensa creativo (DFC)</b> — Lees cuándo vale la pena arriesgar: rompes una línea con el pase o te sumas al ataque, y corres al 100% para volver.<br><small>Habilidades: Espacio alejado, Girar la cabeza, Centro de juego, Pase, Conducción del balón, Aceleraciones · Fundamentos: Interceptación, reequilibrio, cobertura ofensiva; Pase filtrado, conducción para progresar</small></div><div style="margin-bottom:10px"><b>Carrilero (CAI · CAD)</b> — Eres todo el carril: das amplitud en ataque, recuperas en defensa y desequilibras con tu cambio de ritmo.<br><small>Habilidades: Espacio cercano, Orientación del cuerpo, Centro de juego, Aceleraciones, Cambios de dirección, Regate, Centros · Fundamentos: Desmarque de ruptura, desdoblamiento, acoso, cobertura; Regate, conducción a velocidad, centro</small></div><div style="margin-bottom:10px"><b>Medio de contención (MC)</b> — Eres el equilibrio del equipo: proteges el carril central, recuperas el balón y das el primer pase seguro.<br><small>Habilidades: Girar la cabeza, Centro de juego, Espacio cercano, Desplazamientos, Frenadas, Pase, Protección de balón · Fundamentos: Reequilibrio, cobertura defensiva, interceptación, marcaje, temporización; Pase de seguridad, control orientado, protección de balón</small></div><div style="margin-bottom:10px"><b>Medio pivote (MC)</b> — Eres el que organiza: recibes de espaldas, giras y repartes el juego al lado bueno. Por ti pasa la salida del equipo.<br><small>Habilidades: Girar la cabeza, Orientación del cuerpo, Centro de juego, Control, Giros con balón, Pase, Frenadas · Fundamentos: Cobertura ofensiva, apoyo, reequilibrio; Control orientado, giros con balón, pase que rompe líneas</small></div><div style="margin-bottom:10px"><b>Box to box (MC)</b> — Vas y vienes: recuperas, pisas el área y resuelves con disparo de media distancia. Entiendes cuándo llegar y cuándo sostener.<br><small>Habilidades: Espacio alejado, Espacio cercano, Orientación del cuerpo, Aceleraciones, Desplazamientos, Tiro, Conducción del balón · Fundamentos: Apoyo, desmarque y llegada, creación de espacios; Control orientado, pase, pared, tiro de media distancia</small></div><div style="margin-bottom:10px"><b>Enganche (MP)</b> — Juegas entre líneas: recibes donde nadie llega, sorprendes con el regate y filtras el último pase.<br><small>Habilidades: Girar la cabeza, Espacio cercano, Centro de juego, Control, Regate, Pase, Giros con balón · Fundamentos: Ocupar espacios entre líneas, desmarque de apoyo; Control orientado, regate en creación, pase filtrado, pared</small></div><div style="margin-bottom:10px"><b>Extremo (EI · ED)</b> — Abres el campo y fijas al lateral, ganas el uno contra uno, atacas el intervalo y llegas a rematar al segundo palo.<br><small>Habilidades: Espacio cercano, Orientación del cuerpo, Espacio alejado, Aceleraciones, Cambios de dirección, Fintas, Regate, Centros · Fundamentos: Desmarque, 1c1, diagonal al intervalo, presión al lateral; Regate, conducción a velocidad, centro, finalización</small></div><div style="margin-bottom:10px"><b>Delantero móvil (DC)</b> — Te mueves y te asocias: bajas a recibir para generar dudas en los centrales, combinas y atacas el espacio que dejaste.<br><small>Habilidades: Espacio cercano, Espacio alejado, Orientación del cuerpo, Protección de balón, Control, Aceleraciones, Tiro · Fundamentos: Desmarque de apoyo, ocupación de espacios, primera presión; Control de espaldas, protección, pared, finalización</small></div><div style="margin-bottom:10px"><b>Delantero de ruptura (DC)</b> — Eres el delantero de último hombre: atacas la espalda de la defensa, desequilibras con el regate y vives para el gol.<br><small>Habilidades: Espacio alejado, Orientación del cuerpo, Girar la cabeza, Aceleraciones, Fintas, Tiro, Cabeceo · Fundamentos: Desmarque de ruptura, ataque de la espalda, movimientos de engaño; Finalización (tiro, cabeceo), control orientado en carrera, regate</small></div></div>
+    <div class="adapt" style="margin-top:16px"><div class="adapt-h"><b>Domina 2 o 3 posiciones.</b>Según tus cualidades físicas y técnicas te asignamos 2 o 3 posiciones compatibles. Cuando las dominas por completo, sumamos otra. Así puedes jugar en distintos sistemas y adaptarte al momento del partido: por ejemplo, un defensa de seguridad que domina la contención, o un carrilero rápido en recuperación que pasa a lateral cuando el rival lo exige.</div></div>
+  </section>
+
   <section id="contacto">
     <div class="shead"><span class="num">12</span><h2>Contacto</h2></div>
-    <p class="bio" style="font-size:14px">¿Buscas un entrenador para tus inferiores o fútbol formativo, o quieres crear un club o academia? Hablemos.</p>
-    <a class="wa-btn" href="https://wa.me/526371377861?text=Hola%20Mario%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20platicar." target="_blank" rel="noopener">WhatsApp · +52 637 137 7861</a>
+    <p class="bio" style="font-size:14px" id="ct-txt">¿Buscas un entrenador para tus inferiores o fútbol formativo, o quieres crear un club o academia? Hablemos.</p>
+    <a class="wa-btn" id="ct-wa" href="https://wa.me/526371377861?text=Hola%20Mario%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20platicar." target="_blank" rel="noopener">WhatsApp · +52 637 137 7861</a>
     <div class="wa-note">Respondo por WhatsApp Business.</div>
   </section>
   <footer><p><b>MARIO MURILLO</b> · Portafolio de entrenador · Licencia PRO FMF / SNC</p></footer>
@@ -1285,35 +1441,89 @@
   });
 })();
 (function(){
-  var ORDER=["perfil","modelo","aprende","metodo","staff","club"], NAME={perfil:"Perfil",modelo:"Modelo de juego",aprende:"Cómo aprende",metodo:"Metodología",staff:"Staff",club:"Club / academia"};
-  document.documentElement.classList.add("js-tabs");
-  var secs=[].slice.call(document.querySelectorAll("section[data-g]")), bar=document.getElementById("tabbar");
-  // botones anterior / siguiente al final de cada bloque
-  ORDER.forEach(function(g,i){
-    var last=secs.filter(function(s){return s.getAttribute("data-g")===g;}).pop(); if(!last) return;
-    var nav=document.createElement("div"); nav.className="gnav";
-    nav.innerHTML=(i>0?'<button data-go="'+ORDER[i-1]+'">← '+NAME[ORDER[i-1]]+'</button>':'')+(i<ORDER.length-1?'<button class="nx" data-go="'+ORDER[i+1]+'">Siguiente: '+NAME[ORDER[i+1]]+' →</button>':'<button class="nx" data-go="contacto">Contactar →</button>');
-    last.appendChild(nav);
+  var AUD={
+    clubes:{g:["perfil","modelo","aprende","metodo","staff"],t:"¿Buscas un entrenador para tus inferiores o fútbol formativo? Hablemos.",w:"vi tu portafolio y me gustaría platicar."},
+    proyecto:{g:["club"],t:"¿Quieres crear o sumarte a un proyecto de club, academia o escuela? Hablemos.",w:"me interesa platicar sobre un proyecto de club, academia o escuela."},
+    padres:{g:["padres"],t:"¿Tienes dudas sobre el desarrollo de tu hijo o hija? Escríbeme.",w:"soy padre/madre de familia y me gustaría información sobre tu metodología."},
+    jugadores:{g:["jug"],t:"¿Quieres entrenar con esta metodología? Escríbeme.",w:"soy jugador y me gustaría entrenar contigo."}
+  };
+  var NAME={perfil:"Perfil",modelo:"Modelo de juego",aprende:"Cómo aprende",metodo:"Metodología",staff:"Staff",club:"Club / academia",padres:"Padres",jug:"Jugadores"};
+  var root=document.documentElement; root.classList.add("js-tabs");
+  var secs=[].slice.call(document.querySelectorAll("section[data-g]")), bar=document.getElementById("tabbar"), tb=bar.querySelector(".tb");
+  function audOf(g){for(var k in AUD){if(AUD[k].g.indexOf(g)>-1)return k;}return "clubes";}
+  Object.keys(AUD).forEach(function(k){ var O=AUD[k].g;
+    O.forEach(function(g,i){
+      var last=secs.filter(function(s){return s.getAttribute("data-g")===g;}).pop(); if(!last) return;
+      var nav=document.createElement("div"); nav.className="gnav";
+      nav.innerHTML=(i>0?'<button data-go="'+O[i-1]+'">← '+NAME[O[i-1]]+'</button>':'')+(i<O.length-1?'<button class="nx" data-go="'+O[i+1]+'">Siguiente: '+NAME[O[i+1]]+' →</button>':'<button class="nx" data-go="contacto">Contactar →</button>');
+      last.appendChild(nav);
+    });
   });
+  var ctT=document.getElementById("ct-txt"), ctW=document.getElementById("ct-wa");
   function show(g,target,noScroll){
+    var k=audOf(g), A=AUD[k];
+    root.setAttribute("data-aud",k);
     secs.forEach(function(s){ s.classList.toggle("hid", s.getAttribute("data-g")!==g); });
-    [].forEach.call(bar.querySelectorAll("button"),function(b){ var on=b.getAttribute("data-g")===g; b.classList.toggle("on",on); b.setAttribute("aria-selected",on); if(on&&b.scrollIntoView) b.scrollIntoView({block:"nearest",inline:"center"}); });
+    [].forEach.call(document.querySelectorAll("[data-aud]"),function(b){ if(b.tagName==="BUTTON") b.classList.toggle("on",b.getAttribute("data-aud")===k); });
+    tb.hidden=A.g.length<2;
+    [].forEach.call(tb.querySelectorAll("button"),function(b){ var gg=b.getAttribute("data-g"), on=gg===g; b.hidden=A.g.indexOf(gg)<0; b.classList.toggle("on",on); b.setAttribute("aria-selected",on); if(on&&b.scrollIntoView&&!noScroll) b.scrollIntoView({block:"nearest",inline:"center"}); });
+    if(ctT){ ctT.textContent=A.t; ctW.href="https://wa.me/526371377861?text="+encodeURIComponent("Hola Mario, "+A.w); }
     if(noScroll) return;
     var el=target?document.getElementById(target):null;
     var y=(el||bar).getBoundingClientRect().top+window.scrollY-(el?bar.offsetHeight+6:0);
     window.scrollTo({top:Math.max(0,y),behavior:"smooth"});
   }
-  bar.addEventListener("click",function(e){ var b=e.target.closest("button"); if(b) show(b.getAttribute("data-g")); });
   document.addEventListener("click",function(e){
+    var ab=e.target.closest("button[data-aud]"); if(ab){ var k=ab.getAttribute("data-aud"); show(AUD[k].g[0]); try{history.replaceState(null,"","#para-"+k);}catch(_){} return; }
+    var tbtn=e.target.closest(".tabbar .tb button"); if(tbtn){ show(tbtn.getAttribute("data-g")); return; }
     var b=e.target.closest("[data-go]");
     if(b){ var g=b.getAttribute("data-go"); if(g==="contacto"){document.getElementById("contacto").scrollIntoView({behavior:"smooth"});} else show(g); return; }
     var a=e.target.closest('a[href^="#"]'); if(!a) return;
     var id=a.getAttribute("href").slice(1), s=id&&document.getElementById(id), sec=s&&(s.matches("section[data-g]")?s:s.closest("section[data-g]"));
     if(sec){ e.preventDefault(); show(sec.getAttribute("data-g"), id); }
   });
-  var h=location.hash.slice(1), hs=h&&document.getElementById(h), hsec=hs&&(hs.closest("section[data-g]"));
-  show(hsec?hsec.getAttribute("data-g"):"perfil", hsec?h:null, !hsec);
+  function route(first){
+    var h=location.hash.slice(1);
+    if(/^para-/.test(h) && AUD[h.slice(5)]){ show(AUD[h.slice(5)].g[0]); return; }
+    var hs=h&&document.getElementById(h), hsec=hs&&(hs.closest("section[data-g]"));
+    if(hsec) show(hsec.getAttribute("data-g"), h); else if(first) show("perfil", null, true);
+  }
+  route(true);
+  window.addEventListener("hashchange",function(){ route(false); });
   window.addEventListener("beforeprint",function(){ secs.forEach(function(s){s.classList.remove("hid");}); });
+
+  // ----- Edades (padres) -----
+  var esw=document.querySelector("[data-esw]"), egr=document.querySelector("[data-egr]");
+  if(esw) esw.addEventListener("click",function(ev){ var b=ev.target.closest("button"); if(!b) return; var t=b.getAttribute("data-t");
+    [].forEach.call(esw.children,function(x){x.classList.toggle("on",x===b);}); [].forEach.call(egr.children,function(x){x.classList.toggle("on",x.getAttribute("data-t")===t);}); });
+
+  // ----- Guía del jugador -----
+  var R=[{"id": "por", "n": "Portero-líbero", "tag": "POR", "tipo": "Especial", "linea": "Portería", "pts": [[50, 140]], "d": "Eres el primer atacante y el último defensor: juegas con los pies como uno más en la salida y cubres la espalda de tu defensa.", "perc": ["Orientación del cuerpo", "Espacio alejado", "Centro de juego"], "mot": ["Desplazamientos", "Saltos", "Caídas", "Pase"], "sb": "Rechace, lectura, colocación, cobertura del espacio a la espalda", "cb": "Control orientado, pase corto y largo, conducción (juego de pies)", "fgl": "Pases de seguridad en diagonal a primera línea · Equilibrio en profundidad (con la línea defensiva)", "fid": "—", "fcu": "Ofrecer apoyo tras el pase · Alternar juego corto / largo", "comp": ["dsal"], "tr": "Rondo · MD-4 (juego de pies) · Ejercicios analíticos · MD-1 · Balón parado"}, {"id": "dseg", "n": "Defensa de seguridad", "tag": "DFD", "tipo": "Defensivo", "linea": "Defensa", "pts": [[74, 116]], "d": "Ganas los duelos y el juego aéreo. Con tu marca y tus coberturas, el equipo está tranquilo: contigo no pasan.", "perc": ["Espacio cercano", "Girar la cabeza", "Orientación del cuerpo"], "mot": ["Luchas", "Saltos", "Aceleraciones", "Frenadas", "Cabeceo"], "sb": "Marcaje, entrada, cobertura, temporización, duelo aéreo", "cb": "Despeje / rechace, pase de seguridad", "fgl": "Equilibrio en profundidad · Retrasar ante pases aéreos · Vigilancia del delantero", "fid": "Evitar desmarques a la espalda · Temporizar al posesor · Defender el primer poste", "fcu": "Defender atrás cuando un pase supera · Defensa individual en zonas de riesgo", "comp": ["cont", "lat"], "tr": "Juego de oposición 1c1 · MD-3 · Juego de líneas · MD-2 · Balón parado"}, {"id": "dsal", "n": "Defensa de salida", "tag": "DFI", "tipo": "Defensivo", "linea": "Defensa", "pts": [[26, 116]], "d": "Eres un defensa con pies de mediocampista: sales jugando bajo presión, eres opción de pase siempre y rompes líneas con el pase.", "perc": ["Girar la cabeza", "Espacio cercano", "Centro de juego"], "mot": ["Control", "Conducción del balón", "Pase", "Protección de balón"], "sb": "Cobertura, interceptación", "cb": "Control orientado, conducción, pase que rompe línea", "fgl": "Pases de seguridad en diagonal a primera línea · Pases a segunda línea", "fid": "Abrir línea de pase ante presión alta", "fcu": "Priorizar el pase a la conducción · Juego en progresión (riesgo/beneficio)", "comp": ["piv", "dcre"], "tr": "Rondo · MD-4 · Juego de posición · MD-3"}, {"id": "dcre", "n": "Defensa creativo", "tag": "DFC", "tipo": "Mixto", "linea": "Defensa", "pts": [[50, 120]], "d": "Lees cuándo vale la pena arriesgar: rompes una línea con el pase o te sumas al ataque, y corres al 100% para volver.", "perc": ["Espacio alejado", "Girar la cabeza", "Centro de juego"], "mot": ["Pase", "Conducción del balón", "Aceleraciones"], "sb": "Interceptación, reequilibrio, cobertura ofensiva", "cb": "Pase filtrado, conducción para progresar", "fgl": "Fijar para generar superioridad · Equilibrio en amplitud durante el ataque", "fid": "Apoyos de seguridad para los medios · Coberturas al compañero", "fcu": "Juego en progresión (riesgo/beneficio) · Presionar ante pérdida", "comp": ["dsal", "piv"], "tr": "Juego de posición · MD-3 · Partido real condicionado · MD-4"}, {"id": "car", "n": "Carrilero", "tag": "CAI · CAD", "tipo": "Mixto", "linea": "Medio campo", "pts": [[10, 86], [90, 86]], "d": "Eres todo el carril: das amplitud en ataque, recuperas en defensa y desequilibras con tu cambio de ritmo.", "perc": ["Espacio cercano", "Orientación del cuerpo", "Centro de juego"], "mot": ["Aceleraciones", "Cambios de dirección", "Regate", "Centros"], "sb": "Desmarque de ruptura, desdoblamiento, acoso, cobertura", "cb": "Regate, conducción a velocidad, centro", "fgl": "Garantizar amplitud y profundidad · Incorporarse en cambios de orientación", "fid": "Apoyos en inicio (amplitud/profundidad) · Bascular en las ayudas", "fcu": "Progresión vertical al ataque · Presionar ante pérdida", "comp": ["lat", "ext"], "tr": "Trabajo de patrones · MD-1 · Juego de posición · MD-3 · Juego de alternancia · MD-2"}, {"id": "cont", "n": "Medio de contención", "tag": "MC", "tipo": "Defensivo", "linea": "Medio campo", "pts": [[38, 92]], "d": "Eres el equilibrio del equipo: proteges el carril central, recuperas el balón y das el primer pase seguro.", "perc": ["Girar la cabeza", "Centro de juego", "Espacio cercano"], "mot": ["Desplazamientos", "Frenadas", "Pase", "Protección de balón"], "sb": "Reequilibrio, cobertura defensiva, interceptación, marcaje, temporización", "cb": "Pase de seguridad, control orientado, protección de balón", "fgl": "Equilibrar espacios interiores · Reducir opciones de pase presionando · Evitar pases interiores", "fid": "Identificar responsabilidad defensiva · Apoyos de emergencia", "fcu": "Defender atrás cuando un pase supera · Presionar ante pérdida", "comp": ["dseg", "piv"], "tr": "Juego de líneas · MD-2 · Juego de alternancia · MD-2 · Rondo · MD-4"}, {"id": "piv", "n": "Medio pivote", "tag": "MC", "tipo": "Mixto", "linea": "Medio campo", "pts": [[50, 100]], "d": "Eres el que organiza: recibes de espaldas, giras y repartes el juego al lado bueno. Por ti pasa la salida del equipo.", "perc": ["Girar la cabeza", "Orientación del cuerpo", "Centro de juego"], "mot": ["Control", "Giros con balón", "Pase", "Frenadas"], "sb": "Cobertura ofensiva, apoyo, reequilibrio", "cb": "Control orientado, giros con balón, pase que rompe líneas", "fgl": "Un jugador por delante de la defensa · Posiciones diagonales", "fid": "Orientar movimientos a espacios interiores · Situarse en intervalo", "fcu": "Girar el cuello para más información · Jugar con el tercer hombre · Adecuar el ritmo de circulación", "comp": ["dsal", "box"], "tr": "Rondo · MD-4 y MD-1 · Juego de posición · MD-3"}, {"id": "box", "n": "Box to box", "tag": "MC", "tipo": "Mixto", "linea": "Medio campo", "pts": [[62, 92]], "d": "Vas y vienes: recuperas, pisas el área y resuelves con disparo de media distancia. Entiendes cuándo llegar y cuándo sostener.", "perc": ["Espacio alejado", "Espacio cercano", "Orientación del cuerpo"], "mot": ["Aceleraciones", "Desplazamientos", "Tiro", "Conducción del balón"], "sb": "Apoyo, desmarque y llegada, creación de espacios", "cb": "Control orientado, pase, pared, tiro de media distancia", "fgl": "Apoyos diferentes a los del compañero · Equilibrar espacios interiores · Reducir opciones de pase presionando", "fid": "Diagonal a la espalda del defensor", "fcu": "No detenerse con ventaja · Presionar ante pérdida", "comp": ["eng", "cont"], "tr": "Partido reducido · MD-4 · Juego de oposición encadenada · MD-3"}, {"id": "eng", "n": "Enganche", "tag": "MP", "tipo": "Ofensivo", "linea": "Medio campo", "pts": [[50, 74]], "d": "Juegas entre líneas: recibes donde nadie llega, sorprendes con el regate y filtras el último pase.", "perc": ["Girar la cabeza", "Espacio cercano", "Centro de juego"], "mot": ["Control", "Regate", "Pase", "Giros con balón"], "sb": "Ocupar espacios entre líneas, desmarque de apoyo", "cb": "Control orientado, regate en creación, pase filtrado, pared", "fgl": "Apoyos diferentes a los del compañero", "fid": "Apoyo entre líneas · Atacar espacios ante centro · Defender hacia el carril central", "fcu": "Jugar con el tercer hombre · Flexibilidad decisional", "comp": ["box", "dmov"], "tr": "Juego de posición · MD-3 · Partido reducido · MD-4"}, {"id": "ext", "n": "Extremo", "tag": "EI · ED", "tipo": "Ofensivo", "linea": "Ataque", "pts": [[24, 52], [76, 52]], "d": "Abres el campo y fijas al lateral, ganas el uno contra uno, atacas el intervalo y llegas a rematar al segundo palo.", "perc": ["Espacio cercano", "Orientación del cuerpo", "Espacio alejado"], "mot": ["Aceleraciones", "Cambios de dirección", "Fintas", "Regate", "Centros"], "sb": "Desmarque, 1c1, diagonal al intervalo, presión al lateral", "cb": "Regate, conducción a velocidad, centro, finalización", "fgl": "Coordinar los desmarques · Alternar soporte y profundidad", "fid": "Garantizar amplitud y profundidad · Incorporarse a finalización · Defensa presionante al lateral", "fcu": "Progresión vertical al ataque · Presionar ante pérdida", "comp": ["car", "drup"], "tr": "Juego de oposición 1c1 · MD-3 · Trabajo de patrones · MD-1 · Invasión discontinua · MD-2"}, {"id": "dmov", "n": "Delantero móvil", "tag": "DC", "tipo": "Ofensivo", "linea": "Ataque", "pts": [[50, 42]], "d": "Te mueves y te asocias: bajas a recibir para generar dudas en los centrales, combinas y atacas el espacio que dejaste.", "perc": ["Espacio cercano", "Espacio alejado", "Orientación del cuerpo"], "mot": ["Protección de balón", "Control", "Aceleraciones", "Tiro"], "sb": "Desmarque de apoyo, ocupación de espacios, primera presión", "cb": "Control de espaldas, protección, pared, finalización", "fgl": "Alternar soporte y profundidad · Rematar en zona de finalización · Evitar pases a la zona de pivotes", "fid": "Garantizar la profundidad · Orientar el juego a carriles laterales", "fcu": "Progresión vertical al ataque · Acosar evitando la finalización", "comp": ["eng", "ext"], "tr": "Partido reducido · MD-4 · Ejercicios analíticos · MD-1"}, {"id": "drup", "n": "Delantero de ruptura", "tag": "DC", "tipo": "Ofensivo", "linea": "Ataque", "pts": [[50, 42]], "d": "Eres el delantero de último hombre: atacas la espalda de la defensa, desequilibras con el regate y vives para el gol.", "perc": ["Espacio alejado", "Orientación del cuerpo", "Girar la cabeza"], "mot": ["Aceleraciones", "Fintas", "Tiro", "Cabeceo"], "sb": "Desmarque de ruptura, ataque de la espalda, movimientos de engaño", "cb": "Finalización (tiro, cabeceo), control orientado en carrera, regate", "fgl": "Coordinar los desmarques · Desmarque al espacio interior · Rematar en zona de finalización", "fid": "Desmarque por la espalda de los centrales · Buscar espacio para el contragolpe", "fcu": "Progresión vertical al ataque · No detenerse con ventaja", "comp": ["ext", "dmov"], "tr": "Ejercicios analíticos · MD-1 · Partido reducido · MD-3"}], EX={"lat": "Lateral (en el 4-4-2)"}, RM={}; R.forEach(function(r){RM[r.id]=r;});
+  var gp=document.getElementById("gj-p"), gg=document.getElementById("gj-grid"), gf=document.getElementById("gj-f");
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c];});}
+  function pitch(pts){var s='<svg viewBox="0 0 100 150" aria-hidden="true"><rect x="2" y="2" width="96" height="146" rx="5" fill="#111a13" stroke="rgba(255,255,255,.18)" stroke-width=".7"/><g stroke="rgba(255,255,255,.2)" stroke-width=".6" fill="none"><line x1="2" y1="75" x2="98" y2="75"/><circle cx="50" cy="75" r="9"/><rect x="21" y="2" width="58" height="16"/><rect x="21" y="132" width="58" height="16"/></g>';
+    pts.forEach(function(p){s+='<circle cx="'+p[0]+'" cy="'+p[1]+'" r="9" fill="rgba(216,162,74,.25)"/><circle cx="'+p[0]+'" cy="'+p[1]+'" r="5.5" fill="#d8a24a" stroke="#fff" stroke-width=".6"/>';}); return s+'</svg>';}
+  function ch(list,cls){return list.map(function(x){return '<span class="chip '+cls+'">'+esc(x)+'</span>';}).join("");}
+  function pick(id,scroll){
+    var r=RM[id]; if(!r||!gp) return;
+    [].forEach.call(gg.querySelectorAll("button"),function(b){b.classList.toggle("on",b.getAttribute("data-r")===id);});
+    var comp=r.comp.map(function(c){return RM[c]?'<button data-r="'+c+'">'+esc(RM[c].n)+' →</button>':'<span>'+esc(EX[c]||c)+'</span>';}).join("");
+    gp.innerHTML='<div class="gj-top"><div>'+pitch(r.pts)+'</div><div><h3>'+esc(r.n)+'</h3><span class="tp">'+esc(r.tipo)+'</span><span class="tp l">'+esc(r.tag)+' · '+esc(r.linea)+'</span><p>'+esc(r.d)+'</p></div></div>'+
+      '<div class="gj-s">1 · Tus habilidades prioritarias<span>primero domina estas</span></div><div style="margin-top:8px">'+ch(r.perc,"leer")+ch(r.mot,"hacer")+'</div>'+
+      '<div class="gj-s">2 · Los fundamentos que tienes que dominar</div><div class="gj-g"><div><small>Sin balón</small><p>'+esc(r.sb)+'</p></div><div><small>Con balón</small><p>'+esc(r.cb)+'</p></div></div>'+
+      '<div class="gj-s">3 · Lo que el equipo espera de ti</div><div class="gj-g"><div><small>Tu puesto · FID</small><p>'+esc(r.fid)+'</p></div><div><small>Tu línea · FGL</small><p>'+esc(r.fgl)+'</p></div><div style="grid-column:1/-1"><small>Todo el equipo · FCU</small><p>'+esc(r.fcu)+'</p></div></div>'+
+      '<div class="gj-s">4 · Tus posiciones compatibles<span>para dominar 2 o 3</span></div><div class="gj-c">'+comp+'</div>'+
+      '<div class="gj-s">Cómo lo entrenamos</div><div class="gj-tr">'+esc(r.tr)+'</div>';
+    if(scroll){var y=gp.getBoundingClientRect().top+window.scrollY-bar.offsetHeight-10; window.scrollTo({top:y,behavior:"smooth"});}
+  }
+  if(gp){
+    gg.addEventListener("click",function(ev){var b=ev.target.closest("button[data-r]"); if(b) pick(b.getAttribute("data-r"),true);});
+    gp.addEventListener("click",function(ev){var b=ev.target.closest("button[data-r]"); if(b) pick(b.getAttribute("data-r"),true);});
+    gf.addEventListener("click",function(ev){var b=ev.target.closest("button"); if(!b) return; var f=b.getAttribute("data-f");
+      [].forEach.call(gf.children,function(x){x.classList.toggle("on",x===b);});
+      [].forEach.call(gg.querySelectorAll("button[data-r]"),function(x){x.classList.toggle("off",!!f&&x.getAttribute("data-tipo")!==f);}); });
+    pick("piv",false);
+  }
 
   // ----- 4 fases -----
   var fs=document.getElementById("fases"); if(!fs) return;
